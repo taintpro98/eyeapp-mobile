@@ -13,12 +13,14 @@ import { ChevronLeft } from "lucide-react-native";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 import { useWatchlist } from "@/hooks/useWatchlist";
+import { AccessDeniedState } from "@/components/AccessDeniedState";
+import { isAccessDenied } from "@/utils/apiErrors";
 import type { WatchlistItem } from "@/api/watchlist";
 
 export default function WatchlistScreen() {
   const c = useThemeColors();
   const router = useRouter();
-  const { data, isLoading, refetch, isRefetching } = useWatchlist(1);
+  const { data, isLoading, error, refetch, isRefetching } = useWatchlist(1);
 
   const renderItem = ({ item, index }: { item: WatchlistItem; index: number }) => (
     <View>
@@ -66,7 +68,12 @@ export default function WatchlistScreen() {
           Watchlist
         </Text>
       </View>
-      {isLoading ? (
+      {isAccessDenied(error) ? (
+        <AccessDeniedState
+          title="Watchlist bị khóa"
+          hint="Nâng cấp gói của bạn để theo dõi tài sản trên thị trường này."
+        />
+      ) : isLoading ? (
         <View style={styles.centered}>
           <ActivityIndicator color={c.brand} />
         </View>

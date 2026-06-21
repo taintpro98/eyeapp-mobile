@@ -16,7 +16,12 @@ import { typography } from "@/theme/tokens";
 import { FilterChips } from "@/components/FilterChips";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
 import { PositionCard } from "@/components/PositionCard";
+import { SymbolSearchBar } from "@/components/SymbolSearchBar";
+import { AccessDeniedState } from "@/components/AccessDeniedState";
 import { usePositions } from "@/hooks/usePositions";
+import { isAccessDenied } from "@/utils/apiErrors";
+import { fetchPositionLive } from "@/api/positions";
+import { useAuthStore } from "@/store/authStore";
 import type { Position, PositionStatus } from "@/api/positions";
 
 const STATUS_FILTERS = [
@@ -32,13 +37,21 @@ type FilterValue = "all" | PositionStatus;
 export default function PositionsScreen() {
   const c = useThemeColors();
   const router = useRouter();
+  const accessToken = useAuthStore((s) => s.accessToken);
   const [marketId, setMarketId] = useState<1 | 2>(2);
   const [filter, setFilter] = useState<FilterValue>("all");
   const [activeOnly, setActiveOnly] = useState(true);
+  const [input, setInput] = useState("");
+  const [symbolFilter, setSymbolFilter] = useState("");
+
+  function applyFilter() {
+    setSymbolFilter(input.trim().toUpperCase());
+  }
 
   const {
     data,
     isLoading,
+    error,
     refetch,
     isRefetching,
     fetchNextPage,
@@ -48,6 +61,7 @@ export default function PositionsScreen() {
     market_id: marketId,
     is_active: activeOnly || undefined,
     status: filter === "all" ? undefined : filter,
+    symbol: symbolFilter || undefined,
   });
 
   const positions = data?.pages.flatMap((p) => p.items) ?? [];
@@ -78,7 +92,7 @@ export default function PositionsScreen() {
           Positions
         </Text>
         <View style={{ flex: 1 }} />
-        <Pressable style={styles.headerBtn} onPress={() => refetch()}>
+        <Pressable style={styles.headerBtn} onPress={applyFilter}>
           <RefreshCw size={18} color={c.textMuted} />
         </Pressable>
       </View>
@@ -126,8 +140,21 @@ export default function PositionsScreen() {
         </View>
       </View>
 
+      {/* Search */}
+      <SymbolSearchBar
+        value={input}
+        onChangeText={setInput}
+        onSubmit={applyFilter}
+        style={{ marginHorizontal: 14, marginBottom: 6 }}
+      />
+
       {/* List */}
-      {isLoading ? (
+      {isAccessDenied(error) ? (
+        <AccessDeniedState
+          title="Positions bị khóa"
+          hint="Nâng cấp gói của bạn để xem danh sách vị thế trên thị trường này."
+        />
+      ) : isLoading ? (
         <View style={styles.centered}>
           <ActivityIndicator color={c.brand} />
         </View>
@@ -156,6 +183,11 @@ export default function PositionsScreen() {
             <PositionCard
               position={item}
               onPress={() => handlePress(item)}
+              onRefresh={
+                accessToken
+                  ? () => fetchPositionLive(item.market_id as 1 | 2, item.id, accessToken)
+                  : undefined
+              }
             />
           )}
           ItemSeparatorComponent={() => <View style={{ height: 11 }} />}

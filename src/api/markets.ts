@@ -36,6 +36,10 @@ export async function fetchAllMarkets(): Promise<Market[]> {
   return apiFetch<Market[]>("/markets");
 }
 
+export async function fetchOnboardingMarkets(): Promise<Market[]> {
+  return apiFetch<Market[]>("/markets/onboarding");
+}
+
 export async function fetchUserMarkets(
   accessToken: string
 ): Promise<UserMarket[]> {

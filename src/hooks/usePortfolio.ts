@@ -8,5 +8,6 @@ export function usePortfolio(marketId: 1 | 2) {
     queryKey: ["portfolio", marketId],
     queryFn: () => fetchPortfolio(marketId, accessToken!),
     enabled: !!accessToken,
+    refetchInterval: 30_000,
   });
 }

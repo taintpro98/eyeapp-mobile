@@ -63,3 +63,19 @@ export async function logout(refreshToken?: string): Promise<void> {
 export async function getMe(accessToken: string): Promise<{ user: User }> {
   return apiFetch<{ user: User }>("/me", { method: "GET", accessToken });
 }
+
+export async function verifyEmail(token: string): Promise<{ message: string }> {
+  return apiFetch<{ message: string }>("/auth/verify-email", {
+    method: "POST",
+    body: JSON.stringify({ token }),
+  });
+}
+
+export async function resendVerificationEmail(
+  email: string
+): Promise<{ message: string }> {
+  return apiFetch<{ message: string }>("/auth/resend-verification-email", {
+    method: "POST",
+    body: JSON.stringify({ email }),
+  });
+}

@@ -1,0 +1,157 @@
+{
+  "common": {
+    "loading": "Đang tải...",
+    "refresh": "Làm mới",
+    "apply": "Áp dụng",
+    "time": {
+      "days": ["CN", "T2", "T3", "T4", "T5", "T6", "T7"]
+    }
+  },
+  "nav": {
+    "dashboard": "Bảng điều khiển",
+    "market": "Thị trường",
+    "signals": "Tín hiệu",
+    "positions": "Vị thế",
+    "orders": "Lệnh",
+    "watchlist": "Danh sách theo dõi",
+    "portfolio": "Danh mục",
+    "analysis": "Phân tích",
+    "aiInsights": "Phân tích AI",
+    "settings": "Cài đặt",
+    "more": "Khác"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "system": "Hệ thống"
+  },
+  "language": {
+    "label": "Ngôn ngữ",
+    "description": "Chọn ngôn ngữ ứng dụng",
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "appearance": "Giao diện",
+    "appearanceSubtitle": "Chế độ sáng / tối",
+    "language": "Ngôn ngữ",
+    "languageSubtitle": "Chọn ngôn ngữ ứng dụng",
+    "profile": "Hồ sơ",
+    "profileSubtitle": "Thông tin tài khoản",
+    "displayName": "Tên hiển thị",
+    "email": "Email",
+    "saveChanges": "Lưu thay đổi",
+    "security": "Bảo mật",
+    "securitySubtitle": "Mật khẩu và xác thực",
+    "planEntitlements": "Gói & Quyền lợi",
+    "planEntitlementsSubtitle": "Tóm tắt đăng ký",
+    "manageBilling": "Quản lý thanh toán",
+    "signOut": "Đăng xuất"
+  },
+  "portfolio": {
+    "title": "Danh mục",
+    "subtitle": "Theo dõi danh mục và hiệu suất",
+    "allocation": "Phân bổ",
+    "totalValue": "Tổng giá trị",
+    "cash": "Tiền mặt",
+    "positions": "Vị thế"
+  },
+  "signals": {
+    "title": "Tín hiệu giao dịch",
+    "noSignals": "Không có tín hiệu nào.",
+    "accessDenied": "Cần nâng cấp để xem tín hiệu",
+    "accessDeniedHint": "Gói hiện tại của bạn chưa bao gồm tính năng tín hiệu. Nâng cấp để truy cập."
+  },
+  "market": {
+    "title": "Tổng quan thị trường",
+    "stocks": "Cổ phiếu",
+    "crypto": "Crypto"
+  },
+  "watchlist": {
+    "title": "Danh sách theo dõi",
+    "accessDenied": "Không có quyền truy cập",
+    "accessDeniedHint": "Gói hiện tại của bạn không bao gồm tính năng danh sách theo dõi cho thị trường này."
+  },
+  "positions": {
+    "title": "Vị thế",
+    "noPositions": "Không có vị thế nào.",
+    "accessDenied": "Cần nâng cấp để xem vị thế",
+    "accessDeniedHint": "Gói hiện tại của bạn chưa bao gồm tính năng vị thế. Nâng cấp để truy cập.",
+    "columns": {
+      "avgPrice": "Giá TB",
+      "capacity": "Tỷ trọng"
+    },
+    "detail": {
+      "orders": "Lịch sử lệnh",
+      "ordersSubtitle": "Tất cả lệnh theo thứ tự thời gian",
+      "noOrders": "Không có lệnh nào.",
+      "current": "hiện tại",
+      "max": "tối đa",
+      "currentPrice": "Giá hiện tại",
+      "unrealizedPnl": "Lãi/lỗ chưa chốt",
+      "positionReturn": "Lãi/lỗ vị thế",
+      "distToStop": "Cách SL",
+      "stopLoss": "Cắt lỗ",
+      "bookedPnl": "Lãi/lỗ đã chốt",
+      "realizedPnl": "Lợi nhuận",
+      "refreshLive": "Làm mới",
+      "notFound": "Không tìm thấy vị thế.",
+      "orderType": {
+        "increase": "Gia tăng",
+        "decrease": "Giảm bớt"
+      },
+      "col": {
+        "type": "Loại",
+        "price": "Giá",
+        "qty": "Khối lượng",
+        "orderPnl": "P&L lệnh",
+        "positionPnl": "P&L vị thế"
+      }
+    }
+  },
+  "positionsEnum": {
+    "side": {
+      "buy": "Long",
+      "sell": "Short"
+    },
+    "status": {
+      "running": "Đang chạy",
+      "opening": "Đang mở",
+      "opened": "Đã mở",
+      "closing": "Đang đóng",
+      "cancelling": "Cắt lỗ",
+      "closed": "Đã đóng"
+    },
+    "term": {
+      "short_term": "Ngắn hạn",
+      "mid_term": "Trung hạn"
+    }
+  },
+  "ordersEnum": {
+    "side": {
+      "buy": "Mua",
+      "sell": "Bán"
+    }
+  },
+  "assetAnalysis": {
+    "title": "Phân tích tài sản",
+    "searchPlaceholder": "Nhập mã (VD: VIC, HPG...)",
+    "searchButton": "Phân tích",
+    "emptyState": "Tìm kiếm một tài sản để bắt đầu phân tích",
+    "trendAnalysis": "Phân tích xu hướng",
+    "shortTerm": "Ngắn hạn",
+    "midTerm": "Trung hạn"
+  },
+  "auth": {
+    "signIn": "Đăng nhập",
+    "signUp": "Đăng ký",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "noAccount": "Chưa có tài khoản?",
+    "haveAccount": "Đã có tài khoản?"
+  },
+  "upgrade": {
+    "upgradeNow": "Nâng cấp ngay"
+  }
+}

@@ -3,19 +3,21 @@ import {
   View,
   Text,
   FlatList,
-  TextInput,
   StyleSheet,
   ActivityIndicator,
   RefreshControl,
   Pressable,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Search, RefreshCw } from "lucide-react-native";
+import { RefreshCw } from "lucide-react-native";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 import { AppHeader } from "@/components/AppHeader";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
+import { SymbolSearchBar } from "@/components/SymbolSearchBar";
 import { useSignals } from "@/hooks/useSignals";
+import { AccessDeniedState } from "@/components/AccessDeniedState";
+import { isAccessDenied } from "@/utils/apiErrors";
 import type { Signal } from "@/api/signals";
 
 function formatNumber(n: number): string {
@@ -33,6 +35,7 @@ function timeAgo(ts: number): string {
 export default function SignalsScreen() {
   const c = useThemeColors();
   const [marketId, setMarketId] = useState<1 | 2>(2);
+  const [input, setInput] = useState("");
   const [symbolFilter, setSymbolFilter] = useState("");
 
   const {
@@ -48,6 +51,10 @@ export default function SignalsScreen() {
     market_id: marketId,
     symbol: symbolFilter || undefined,
   });
+
+  function applyFilter() {
+    setSymbolFilter(input.trim().toUpperCase());
+  }
 
   const signals = data?.pages.flatMap((p) => p.items) ?? [];
 
@@ -123,7 +130,7 @@ export default function SignalsScreen() {
           >
             Trading signals
           </Text>
-          <Pressable style={styles.refreshBtn} onPress={() => refetch()}>
+          <Pressable style={styles.refreshBtn} onPress={applyFilter}>
             <RefreshCw size={18} color={c.textMuted} />
           </Pressable>
         </View>
@@ -137,26 +144,20 @@ export default function SignalsScreen() {
             onSelect={(v) => setMarketId(v as 1 | 2)}
           />
         </View>
-        <View
-          style={[
-            styles.searchBar,
-            { backgroundColor: c.card, borderColor: c.cardBorder },
-          ]}
-        >
-          <Search size={17} color={c.textFaint} />
-          <TextInput
-            style={[styles.searchInput, { color: c.textPrimary }]}
-            placeholder="Filter by symbol"
-            placeholderTextColor={c.textFaint}
-            value={symbolFilter}
-            onChangeText={setSymbolFilter}
-            autoCapitalize="characters"
-            autoCorrect={false}
-          />
-        </View>
+        <SymbolSearchBar
+          value={input}
+          onChangeText={setInput}
+          onSubmit={applyFilter}
+          style={{ marginBottom: 4 }}
+        />
       </View>
 
-      {isLoading ? (
+      {isAccessDenied(error) ? (
+        <AccessDeniedState
+          title="Signals bị khóa"
+          hint="Nâng cấp gói của bạn để xem tín hiệu giao dịch trên thị trường này."
+        />
+      ) : isLoading ? (
         <View style={styles.centered}>
           <ActivityIndicator color={c.brand} />
         </View>

@@ -1,0 +1,157 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "refresh": "Refresh",
+    "apply": "Apply",
+    "time": {
+      "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    }
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "market": "Market",
+    "signals": "Signals",
+    "positions": "Positions",
+    "orders": "Orders",
+    "watchlist": "Watchlist",
+    "portfolio": "Portfolio",
+    "analysis": "Analysis",
+    "aiInsights": "AI Insights",
+    "settings": "Settings",
+    "more": "More"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "label": "Language",
+    "description": "Choose app language",
+    "en": "English",
+    "vi": "Vietnamese"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "appearanceSubtitle": "Light / dark mode",
+    "language": "Language",
+    "languageSubtitle": "Choose app language",
+    "profile": "Profile",
+    "profileSubtitle": "Your account information",
+    "displayName": "Display name",
+    "email": "Email",
+    "saveChanges": "Save changes",
+    "security": "Security",
+    "securitySubtitle": "Password and authentication",
+    "planEntitlements": "Plan & Entitlements",
+    "planEntitlementsSubtitle": "Your subscription summary",
+    "manageBilling": "Manage billing",
+    "signOut": "Sign out"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Track your holdings and performance",
+    "allocation": "Allocation",
+    "totalValue": "Total Value",
+    "cash": "Cash",
+    "positions": "Positions"
+  },
+  "signals": {
+    "title": "Trading signals",
+    "noSignals": "No signals found.",
+    "accessDenied": "Upgrade required to view signals",
+    "accessDeniedHint": "Your current plan does not include signals. Upgrade to access."
+  },
+  "market": {
+    "title": "Market Overview",
+    "stocks": "Stocks",
+    "crypto": "Crypto"
+  },
+  "watchlist": {
+    "title": "Watchlist",
+    "accessDenied": "Watchlist Unavailable",
+    "accessDeniedHint": "Your current plan does not include watchlist access for this market."
+  },
+  "positions": {
+    "title": "Positions",
+    "noPositions": "No positions found.",
+    "accessDenied": "Upgrade required to view positions",
+    "accessDeniedHint": "Your current plan does not include positions. Upgrade to access.",
+    "columns": {
+      "avgPrice": "Avg Price",
+      "capacity": "Capacity"
+    },
+    "detail": {
+      "orders": "Order History",
+      "ordersSubtitle": "All orders in chronological order",
+      "noOrders": "No orders found.",
+      "current": "current",
+      "max": "max",
+      "currentPrice": "Current Price",
+      "unrealizedPnl": "Unrealized P&L",
+      "positionReturn": "Position Return",
+      "distToStop": "Dist. to SL",
+      "stopLoss": "Stop Loss",
+      "bookedPnl": "Booked P&L",
+      "realizedPnl": "Realized P&L",
+      "refreshLive": "Refresh",
+      "notFound": "Position not found.",
+      "orderType": {
+        "increase": "Increase",
+        "decrease": "Decrease"
+      },
+      "col": {
+        "type": "Type",
+        "price": "Price",
+        "qty": "Quantity",
+        "orderPnl": "Order P&L",
+        "positionPnl": "Position P&L"
+      }
+    }
+  },
+  "positionsEnum": {
+    "side": {
+      "buy": "Long",
+      "sell": "Short"
+    },
+    "status": {
+      "running": "Running",
+      "opening": "Opening",
+      "opened": "Opened",
+      "closing": "Closing",
+      "cancelling": "Stop Loss",
+      "closed": "Closed"
+    },
+    "term": {
+      "short_term": "Short-term",
+      "mid_term": "Mid-term"
+    }
+  },
+  "ordersEnum": {
+    "side": {
+      "buy": "Buy",
+      "sell": "Sell"
+    }
+  },
+  "assetAnalysis": {
+    "title": "Asset Analysis",
+    "searchPlaceholder": "Enter ticker (e.g. VIC, HPG...)",
+    "searchButton": "Analyze",
+    "emptyState": "Search for an asset to begin analysis",
+    "trendAnalysis": "Trend Analysis",
+    "shortTerm": "Short Term",
+    "midTerm": "Mid Term"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  },
+  "upgrade": {
+    "upgradeNow": "Upgrade now"
+  }
+}

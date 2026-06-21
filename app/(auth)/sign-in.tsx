@@ -40,7 +40,7 @@ export default function SignInScreen() {
     try {
       const res = await login({ email: email.trim(), password });
       await setAuth(res.user, res.tokens);
-      router.replace("/(tabs)");
+      router.replace("/onboarding");
     } catch (e: any) {
       Alert.alert("Đăng nhập thất bại", e.message ?? "Vui lòng thử lại");
     } finally {

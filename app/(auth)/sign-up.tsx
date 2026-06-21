@@ -8,7 +8,6 @@ import {
   ActivityIndicator,
   KeyboardAvoidingView,
   Platform,
-  Alert,
   ScrollView,
 } from "react-native";
 import { useRouter } from "expo-router";
@@ -46,11 +45,10 @@ export default function SignUpScreen() {
         email: email.trim(),
         password,
       });
-      Alert.alert(
-        "Tạo tài khoản thành công",
-        "Vui lòng kiểm tra email để xác minh tài khoản, sau đó đăng nhập.",
-        [{ text: "OK", onPress: () => router.back() }]
-      );
+      router.replace({
+        pathname: "/(auth)/verify-email",
+        params: { email: email.trim() },
+      });
     } catch (e: any) {
       Alert.alert("Đăng ký thất bại", e.message ?? "Vui lòng thử lại");
     } finally {

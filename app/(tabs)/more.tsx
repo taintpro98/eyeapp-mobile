@@ -106,7 +106,7 @@ export default function MoreScreen() {
         <View style={[styles.divider, { backgroundColor: c.divider }]} />
 
         {/* Settings & Help */}
-        <Pressable style={styles.menuRow}>
+        <Pressable style={styles.menuRow} onPress={() => router.push("/(more)/settings")}>
           <Settings size={19} color={c.textMuted} />
           <Text
             style={[

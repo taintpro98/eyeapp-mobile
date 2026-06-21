@@ -46,6 +46,7 @@ export function SegmentedToggle({ options, selected, onSelect }: Props) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
+    alignSelf: "flex-start",
     gap: 3,
     borderWidth: 1,
     borderRadius: 11,
