@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0}
+  .ph-scroll::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:48px;background:#e7e5df;font-family:Inter,system-ui,sans-serif">
+
+  <div style="max-width:760px;margin-bottom:44px">
+    <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#8B5FBF;margin-bottom:14px">AlumiEye · Mobile</div>
+    <h1 style="margin:0 0 12px;font-size:34px;font-weight:700;letter-spacing:-.02em;color:#2E2630">AlumiEye, as a native app</h1>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:#6E6470">The same product and the same warm-purple design language as the web app — VN-Index KPIs, trading signals, watchlist, portfolio — carried into a phone. Two directions below. <strong style="color:#2E2630">Variation 1</strong> stays faithful to the web (iOS, light theme); <strong style="color:#2E2630">Variation 2</strong> is a more native, elevated take (Android, dark theme). Every screen shares the same tokens — <span style="font-family:ui-monospace,monospace;font-size:13px;color:#6F2C91">#6F2C91</span> brand, warm <span style="font-family:ui-monospace,monospace;font-size:13px;color:#6F2C91">#F4F0EA</span> surfaces, Inter, 12&ndash;14px cards — so either theme works on either platform.</p>
+  </div>
+
+  <!-- ============ VARIATION 1 ============ -->
+  <div style="margin-bottom:60px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:22px">
+      <h2 style="margin:0;font-size:20px;font-weight:700;color:#2E2630">Variation 1 — Faithful</h2>
+      <span style="font:500 12px/1 ui-monospace,monospace;color:#6E6470">iOS · Light · bottom tab bar</span>
+    </div>
+    <div style="display:flex;gap:40px;align-items:flex-start">
+
+      <!-- ===== iOS Dashboard ===== -->
+      <div style="flex:none;width:390px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Dashboard</div>
+        <div style="width:390px;background:#0b0b0c;border-radius:54px;padding:11px;box-shadow:0 18px 50px rgba(46,38,48,.22)">
+          <div style="position:relative;width:368px;height:800px;background:#F4F0EA;border-radius:43px;overflow:hidden;color:#2E2630">
+            <!-- dynamic island -->
+            <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:112px;height:32px;background:#0b0b0c;border-radius:18px;z-index:20"></div>
+            <!-- status bar -->
+            <div style="height:52px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 7px;color:#2E2630">
+              <span style="font-size:15px;font-weight:600;letter-spacing:.2px">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <!-- app bar -->
+            <div style="display:flex;align-items:center;gap:9px;padding:4px 18px 10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px">A</div>
+              <span style="font-size:16px;font-weight:600">ALumiEye</span>
+              <div style="flex:1"></div>
+              <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6E6470"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+              <div style="width:34px;height:34px;border-radius:50%;background:#6F2C91;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;box-shadow:0 0 0 2px rgba(111,44,145,.25)">M</div>
+            </div>
+            <!-- page header -->
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:2px 18px 14px">
+              <div>
+                <h1 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em">Welcome, Minh</h1>
+                <p style="margin:3px 0 0;font-size:12.5px;color:#6E6470">Your markets at a glance</p>
+              </div>
+              <div style="display:flex;gap:3px;background:#fff;border:1px solid #E7DFD6;border-radius:11px;padding:3px">
+                <span style="padding:6px 11px;border-radius:8px;background:#6F2C91;color:#fff;font-size:12px;font-weight:600">Stocks</span>
+                <span style="padding:6px 11px;border-radius:8px;color:#6E6470;font-size:12px;font-weight:500">Crypto</span>
+              </div>
+            </div>
+            <!-- content -->
+            <div class="ph-scroll" style="padding:0 18px;display:flex;flex-direction:column;gap:14px">
+              <!-- KPI grid -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:14px">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start"><p style="margin:0;font-size:11.5px;font-weight:500;color:#6E6470">VN-Index</p><div style="width:28px;height:28px;border-radius:8px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div></div>
+                  <p style="margin:6px 0 0;font-size:21px;font-weight:600;letter-spacing:-.01em">1,284.32</p>
+                  <p style="margin:3px 0 0;font-size:12px;font-weight:500;color:#16a34a">+0.84% today</p>
+                </div>
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:14px">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start"><p style="margin:0;font-size:11.5px;font-weight:500;color:#6E6470">VN30</p><div style="width:28px;height:28px;border-radius:8px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div></div>
+                  <p style="margin:6px 0 0;font-size:21px;font-weight:600;letter-spacing:-.01em">1,342.10</p>
+                  <p style="margin:3px 0 0;font-size:12px;font-weight:500;color:#16a34a">+0.62% today</p>
+                </div>
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:14px">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start"><p style="margin:0;font-size:11.5px;font-weight:500;color:#6E6470">HOSE Value</p><div style="width:28px;height:28px;border-radius:8px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div></div>
+                  <p style="margin:6px 0 0;font-size:21px;font-weight:600;letter-spacing:-.01em">18,420<span style="font-size:13px;font-weight:500;color:#6E6470"> B</span></p>
+                  <p style="margin:3px 0 0;font-size:12px;color:#6E6470">Session turnover</p>
+                </div>
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:14px">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start"><p style="margin:0;font-size:11.5px;font-weight:500;color:#6E6470">Net Foreign</p><div style="width:28px;height:28px;border-radius:8px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div></div>
+                  <p style="margin:6px 0 0;font-size:21px;font-weight:600;letter-spacing:-.01em;color:#16a34a">+312.4<span style="font-size:13px;font-weight:500;color:#6E6470"> B</span></p>
+                  <p style="margin:3px 0 0;font-size:12px;color:#6E6470">Buy &ndash; sell, today</p>
+                </div>
+              </div>
+              <!-- recent signals -->
+              <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:15px">
+                <p style="margin:0 0 2px;font-size:14px;font-weight:600">Recent signals</p>
+                <p style="margin:0 0 12px;font-size:12px;color:#6E6470">Latest moves on your markets</p>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #E7DFD6;border-radius:11px;padding:10px 11px">
+                    <div style="display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#6F2C91" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><div><p style="margin:0;font-size:14px;font-weight:600">HPG</p><p style="margin:1px 0 0;font-size:11.5px;color:#6E6470">Buy · Strong</p></div></div>
+                    <span style="font-size:11.5px;color:#6E6470">4m ago</span>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #E7DFD6;border-radius:11px;padding:10px 11px">
+                    <div style="display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#6F2C91" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><div><p style="margin:0;font-size:14px;font-weight:600">SSI</p><p style="margin:1px 0 0;font-size:11.5px;color:#6E6470">Sell · Moderate</p></div></div>
+                    <span style="font-size:11.5px;color:#6E6470">12m ago</span>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #E7DFD6;border-radius:11px;padding:10px 11px">
+                    <div style="display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#6F2C91" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><div><p style="margin:0;font-size:14px;font-weight:600">FPT</p><p style="margin:1px 0 0;font-size:11.5px;color:#6E6470">Buy · Strong</p></div></div>
+                    <span style="font-size:11.5px;color:#6E6470">18m ago</span>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;color:#6F2C91;font-size:13px;font-weight:600">View all signals <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></div>
+              </div>
+              <!-- upgrade -->
+              <div style="border:1px solid rgba(111,44,145,.2);border-radius:14px;padding:15px;background:linear-gradient(135deg,rgba(111,44,145,.06),transparent)">
+                <p style="margin:0 0 2px;font-size:14px;font-weight:600">Unlock Premium</p>
+                <p style="margin:0 0 12px;font-size:12px;line-height:1.45;color:#6E6470">Advanced analytics, crypto markets and AI insights.</p>
+                <div style="display:inline-flex;align-items:center;height:38px;padding:0 18px;border-radius:9px;background:#6F2C91;color:#fff;font-size:13px;font-weight:600">Upgrade now</div>
+              </div>
+            </div>
+            <!-- bottom nav -->
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid #E7DFD6;display:flex;padding:9px 6px 0">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#6F2C91"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span style="font-size:10px;font-weight:600">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg><span style="font-size:10px;font-weight:500">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><span style="font-size:10px;font-weight:500">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg><span style="font-size:10px;font-weight:500">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg><span style="font-size:10px;font-weight:500">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:128px;height:5px;border-radius:3px;background:#2E2630"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== iOS Market ===== -->
+      <div style="flex:none;width:390px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Market</div>
+        <div style="width:390px;background:#0b0b0c;border-radius:54px;padding:11px;box-shadow:0 18px 50px rgba(46,38,48,.22)">
+          <div style="position:relative;width:368px;height:800px;background:#F4F0EA;border-radius:43px;overflow:hidden;color:#2E2630">
+            <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:112px;height:32px;background:#0b0b0c;border-radius:18px;z-index:20"></div>
+            <div style="height:52px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 7px;color:#2E2630">
+              <span style="font-size:15px;font-weight:600;letter-spacing:.2px">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:9px;padding:4px 18px 10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px">A</div>
+              <span style="font-size:16px;font-weight:600">ALumiEye</span>
+              <div style="flex:1"></div>
+              <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6E6470"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+              <div style="width:34px;height:34px;border-radius:50%;background:#6F2C91;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;box-shadow:0 0 0 2px rgba(111,44,145,.25)">M</div>
+            </div>
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:2px 18px 14px">
+              <div>
+                <h1 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em">Market</h1>
+                <p style="margin:3px 0 0;font-size:12.5px;color:#6E6470">Vietnam equities · HOSE</p>
+              </div>
+              <div style="display:flex;gap:3px;background:#fff;border:1px solid #E7DFD6;border-radius:11px;padding:3px">
+                <span style="padding:6px 11px;border-radius:8px;background:#6F2C91;color:#fff;font-size:12px;font-weight:600">Stocks</span>
+                <span style="padding:6px 11px;border-radius:8px;color:#6E6470;font-size:12px;font-weight:500">Crypto</span>
+              </div>
+            </div>
+            <div class="ph-scroll" style="padding:0 18px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px"><p style="margin:0;font-size:11.5px;font-weight:500;color:#6E6470">VN-Index</p><p style="margin:5px 0 0;font-size:19px;font-weight:600">1,284.32</p><p style="margin:2px 0 0;font-size:12px;font-weight:500;color:#16a34a">+0.84%</p></div>
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px"><p style="margin:0;font-size:11.5px;font-weight:500;color:#6E6470">VN30</p><p style="margin:5px 0 0;font-size:19px;font-weight:600">1,342.10</p><p style="margin:2px 0 0;font-size:12px;font-weight:500;color:#16a34a">+0.62%</p></div>
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px"><p style="margin:0;font-size:11.5px;font-weight:500;color:#6E6470">HOSE Value</p><p style="margin:5px 0 0;font-size:19px;font-weight:600">18,420<span style="font-size:12px;font-weight:500;color:#6E6470"> B</span></p><p style="margin:2px 0 0;font-size:12px;color:#6E6470">Session</p></div>
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px"><p style="margin:0;font-size:11.5px;font-weight:500;color:#6E6470">Net Foreign</p><p style="margin:5px 0 0;font-size:19px;font-weight:600;color:#16a34a">+312.4<span style="font-size:12px;font-weight:500;color:#6E6470"> B</span></p><p style="margin:2px 0 0;font-size:12px;color:#6E6470">Today</p></div>
+              </div>
+              <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:15px">
+                <p style="margin:0 0 2px;font-size:14px;font-weight:600">Top movers</p>
+                <p style="margin:0 0 12px;font-size:12px;color:#6E6470">Most active by turnover</p>
+                <div style="display:flex;flex-direction:column;gap:9px">
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">HPG</p><p style="margin:1px 0 0;font-size:11px;color:#6E6470">Hoa Phat Group</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">27,650</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#16a34a">+3.2%</p></div></div>
+                  <div style="height:1px;background:#F0EBE3"></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">FPT</p><p style="margin:1px 0 0;font-size:11px;color:#6E6470">FPT Corporation</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">134,500</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#16a34a">+2.4%</p></div></div>
+                  <div style="height:1px;background:#F0EBE3"></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">VHM</p><p style="margin:1px 0 0;font-size:11px;color:#6E6470">Vinhomes</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">42,100</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#16a34a">+1.8%</p></div></div>
+                  <div style="height:1px;background:#F0EBE3"></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">VIC</p><p style="margin:1px 0 0;font-size:11px;color:#6E6470">Vingroup</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">41,250</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#dc2626">&minus;1.1%</p></div></div>
+                  <div style="height:1px;background:#F0EBE3"></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">MWG</p><p style="margin:1px 0 0;font-size:11px;color:#6E6470">Mobile World</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">61,800</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#dc2626">&minus;0.6%</p></div></div>
+                </div>
+              </div>
+              <div style="background:#fff;border:1px solid #E7DFD6;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:15px">
+                <p style="margin:0 0 13px;font-size:14px;font-weight:600">Market sentiment</p>
+                <div style="display:flex;flex-direction:column;gap:11px">
+                  <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#6E6470">Bullish</span><span style="font-weight:600">62%</span></div><div style="height:7px;border-radius:4px;background:#EFE9E1;overflow:hidden"><div style="height:100%;width:62%;background:#16a34a;border-radius:4px"></div></div></div>
+                  <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#6E6470">Neutral</span><span style="font-weight:600">24%</span></div><div style="height:7px;border-radius:4px;background:#EFE9E1;overflow:hidden"><div style="height:100%;width:24%;background:#8B5FBF;border-radius:4px"></div></div></div>
+                  <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#6E6470">Bearish</span><span style="font-weight:600">14%</span></div><div style="height:7px;border-radius:4px;background:#EFE9E1;overflow:hidden"><div style="height:100%;width:14%;background:#dc2626;border-radius:4px"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid #E7DFD6;display:flex;padding:9px 6px 0">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span style="font-size:10px;font-weight:500">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#6F2C91"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg><span style="font-size:10px;font-weight:600">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><span style="font-size:10px;font-weight:500">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg><span style="font-size:10px;font-weight:500">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg><span style="font-size:10px;font-weight:500">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:128px;height:5px;border-radius:3px;background:#2E2630"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== iOS Signals ===== -->
+      <div style="flex:none;width:390px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Signals</div>
+        <div style="width:390px;background:#0b0b0c;border-radius:54px;padding:11px;box-shadow:0 18px 50px rgba(46,38,48,.22)">
+          <div style="position:relative;width:368px;height:800px;background:#F4F0EA;border-radius:43px;overflow:hidden;color:#2E2630">
+            <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:112px;height:32px;background:#0b0b0c;border-radius:18px;z-index:20"></div>
+            <div style="height:52px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 7px;color:#2E2630">
+              <span style="font-size:15px;font-weight:600;letter-spacing:.2px">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:9px;padding:4px 18px 10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px">A</div>
+              <span style="font-size:16px;font-weight:600">ALumiEye</span>
+              <div style="flex:1"></div>
+              <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6E6470"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+              <div style="width:34px;height:34px;border-radius:50%;background:#6F2C91;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;box-shadow:0 0 0 2px rgba(111,44,145,.25)">M</div>
+            </div>
+            <div style="padding:2px 18px 12px">
+              <h1 style="margin:0 0 12px;font-size:22px;font-weight:700;letter-spacing:-.01em">Trading signals</h1>
+              <div style="display:flex;align-items:center;gap:9px;height:42px;background:#fff;border:1px solid #E7DFD6;border-radius:11px;padding:0 13px;color:#9b94a0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg><span style="font-size:13px">Filter by symbol</span></div>
+            </div>
+            <div class="ph-scroll" style="padding:0 18px;display:flex;flex-direction:column;gap:11px">
+              <div style="background:#fff;border:1px solid #E7DFD6;border-left:4px solid #16a34a;border-radius:11px;padding:13px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start"><span style="font-size:17px;font-weight:700">HPG</span><span style="background:#dcfce7;color:#15803d;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px">BUY</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Qty</p><p style="margin:3px 0 0;font-size:13px;font-weight:600;color:#3b82f6;font-variant-numeric:tabular-nums">5.20%</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Price</p><p style="margin:3px 0 0;font-size:13px;font-variant-numeric:tabular-nums">27,650</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Time</p><p style="margin:3px 0 0;font-size:13px;color:#6E6470">4m ago</p></div>
+                </div>
+              </div>
+              <div style="background:#fff;border:1px solid #E7DFD6;border-left:4px solid #dc2626;border-radius:11px;padding:13px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start"><span style="font-size:17px;font-weight:700">SSI</span><span style="background:#fee2e2;color:#b91c1c;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px">SELL</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Qty</p><p style="margin:3px 0 0;font-size:13px;font-weight:600;color:#f97316;font-variant-numeric:tabular-nums">12.40%</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Price</p><p style="margin:3px 0 0;font-size:13px;font-variant-numeric:tabular-nums">31,200</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Time</p><p style="margin:3px 0 0;font-size:13px;color:#6E6470">12m ago</p></div>
+                </div>
+              </div>
+              <div style="background:#fff;border:1px solid #E7DFD6;border-left:4px solid #16a34a;border-radius:11px;padding:13px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start"><span style="font-size:17px;font-weight:700">FPT</span><span style="background:#dcfce7;color:#15803d;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px">BUY</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Qty</p><p style="margin:3px 0 0;font-size:13px;font-weight:600;color:#3b82f6;font-variant-numeric:tabular-nums">2.10%</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Price</p><p style="margin:3px 0 0;font-size:13px;font-variant-numeric:tabular-nums">134,500</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Time</p><p style="margin:3px 0 0;font-size:13px;color:#6E6470">18m ago</p></div>
+                </div>
+              </div>
+              <!-- locked analytics -->
+              <div style="position:relative;background:#fff;border:1px solid #E7DFD6;border-radius:14px;overflow:hidden;padding:15px">
+                <div style="filter:blur(3px);opacity:.55;pointer-events:none">
+                  <p style="margin:0 0 9px;font-size:14px;font-weight:600">Advanced analytics</p>
+                  <div style="height:96px;border-radius:10px;background:linear-gradient(180deg,#F7F4EF,#EFE9E1);display:flex;align-items:flex-end;gap:5px;padding:10px">
+                    <div style="flex:1;height:40%;background:#8B5FBF;border-radius:3px"></div><div style="flex:1;height:70%;background:#8B5FBF;border-radius:3px"></div><div style="flex:1;height:55%;background:#8B5FBF;border-radius:3px"></div><div style="flex:1;height:85%;background:#6F2C91;border-radius:3px"></div><div style="flex:1;height:60%;background:#8B5FBF;border-radius:3px"></div><div style="flex:1;height:45%;background:#8B5FBF;border-radius:3px"></div>
+                  </div>
+                </div>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+                  <div style="display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:9px;background:#6F2C91;color:#fff;font-size:13px;font-weight:600"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Unlock analytics</div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid #E7DFD6;display:flex;padding:9px 6px 0">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span style="font-size:10px;font-weight:500">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg><span style="font-size:10px;font-weight:500">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#6F2C91"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><span style="font-size:10px;font-weight:600">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg><span style="font-size:10px;font-weight:500">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg><span style="font-size:10px;font-weight:500">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:128px;height:5px;border-radius:3px;background:#2E2630"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== iOS Watchlist ===== -->
+      <div style="flex:none;width:390px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Watchlist</div>
+        <div style="width:390px;background:#0b0b0c;border-radius:54px;padding:11px;box-shadow:0 18px 50px rgba(46,38,48,.22)">
+          <div style="position:relative;width:368px;height:800px;background:#F4F0EA;border-radius:43px;overflow:hidden;color:#2E2630">
+            <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:112px;height:32px;background:#0b0b0c;border-radius:18px;z-index:20"></div>
+            <div style="height:52px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 7px;color:#2E2630">
+              <span style="font-size:15px;font-weight:600;letter-spacing:.2px">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:9px;padding:4px 18px 10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px">A</div>
+              <span style="font-size:16px;font-weight:600">ALumiEye</span>
+              <div style="flex:1"></div>
+              <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6E6470"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+              <div style="width:34px;height:34px;border-radius:50%;background:#6F2C91;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;box-shadow:0 0 0 2px rgba(111,44,145,.25)">M</div>
+            </div>
+            <div style="padding:2px 18px 14px">
+              <h1 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em">Watchlist</h1>
+              <p style="margin:3px 0 0;font-size:12.5px;color:#6E6470">8 assets tracked</p>
+            </div>
+            <div class="ph-scroll" style="padding:0 18px;display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #E7DFD6;border-radius:13px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">VNM</p><p style="margin:1px 0 0;font-size:12px;color:#6E6470">Vinamilk</p></div></div>
+                <p style="margin:0;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums">68,900</p>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #E7DFD6;border-radius:13px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">VCB</p><p style="margin:1px 0 0;font-size:12px;color:#6E6470">Vietcombank</p></div></div>
+                <p style="margin:0;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums">92,400</p>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #E7DFD6;border-radius:13px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">ACB</p><p style="margin:1px 0 0;font-size:12px;color:#6E6470">Asia Commercial Bank</p></div></div>
+                <p style="margin:0;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums">24,150</p>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #E7DFD6;border-radius:13px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">GAS</p><p style="margin:1px 0 0;font-size:12px;color:#6E6470">PetroVietnam Gas</p></div></div>
+                <p style="margin:0;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums">78,300</p>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #E7DFD6;border-radius:13px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:38px;height:38px;border-radius:10px;background:rgba(111,44,145,.1);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">MSN</p><p style="margin:1px 0 0;font-size:12px;color:#6E6470">Masan Group</p></div></div>
+                <p style="margin:0;font-size:13px;font-weight:500;color:#9b94a0">Unavailable</p>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid #E7DFD6;display:flex;padding:9px 6px 0">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span style="font-size:10px;font-weight:500">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg><span style="font-size:10px;font-weight:500">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><span style="font-size:10px;font-weight:500">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#6F2C91"><svg width="23" height="23" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg><span style="font-size:10px;font-weight:600">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg><span style="font-size:10px;font-weight:500">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:128px;height:5px;border-radius:3px;background:#2E2630"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== iOS Portfolio ===== -->
+      <div style="flex:none;width:390px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Portfolio</div>
+        <div style="width:390px;background:#0b0b0c;border-radius:54px;padding:11px;box-shadow:0 18px 50px rgba(46,38,48,.22)">
+          <div style="position:relative;width:368px;height:800px;background:#F4F0EA;border-radius:43px;overflow:hidden;color:#2E2630">
+            <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:112px;height:32px;background:#0b0b0c;border-radius:18px;z-index:20"></div>
+            <div style="height:52px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 7px;color:#2E2630">
+              <span style="font-size:15px;font-weight:600;letter-spacing:.2px">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:9px;padding:4px 18px 10px">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px">A</div>
+              <span style="font-size:16px;font-weight:600">ALumiEye</span>
+              <div style="flex:1"></div>
+              <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6E6470"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+              <div style="width:34px;height:34px;border-radius:50%;background:#6F2C91;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;box-shadow:0 0 0 2px rgba(111,44,145,.25)">M</div>
+            </div>
+            <div style="padding:2px 18px 14px">
+              <h1 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.01em">Portfolio</h1>
+              <p style="margin:3px 0 0;font-size:12.5px;color:#6E6470">Allocation &amp; holdings</p>
+            </div>
+            <div class="ph-scroll" style="padding:0 18px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px">
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:13px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:12px"><p style="margin:0;font-size:10.5px;font-weight:500;color:#6E6470">Total value</p><p style="margin:5px 0 0;font-size:15px;font-weight:600">2,450<span style="font-size:11px;color:#6E6470">M</span></p></div>
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:13px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:12px"><p style="margin:0;font-size:10.5px;font-weight:500;color:#6E6470">Cash</p><p style="margin:5px 0 0;font-size:15px;font-weight:600">312<span style="font-size:11px;color:#6E6470">M · 12.7%</span></p></div>
+                <div style="background:#fff;border:1px solid #E7DFD6;border-radius:13px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:12px"><p style="margin:0;font-size:10.5px;font-weight:500;color:#6E6470">Positions</p><p style="margin:5px 0 0;font-size:15px;font-weight:600">7</p></div>
+              </div>
+              <div style="position:relative;overflow:hidden;border:1px solid rgba(111,44,145,.12);border-radius:14px;box-shadow:0 2px 8px rgba(46,38,48,.06);padding:16px;background:linear-gradient(135deg,rgba(111,44,145,.05),transparent 60%,rgba(139,95,191,.04))">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><p style="margin:0;font-size:14px;font-weight:600">Allocation</p><div style="width:30px;height:30px;border-radius:8px;background:rgba(111,44,145,.08);display:flex;align-items:center;justify-content:center;color:#6F2C91"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div></div>
+                <div style="display:flex;align-items:center;gap:18px">
+                  <div style="position:relative;width:130px;height:130px;flex:none">
+                    <div style="width:130px;height:130px;border-radius:50%;background:conic-gradient(#6F2C91 0 22%,#3b82f6 22% 40%,#14b8a6 40% 55%,#a855f7 55% 67%,#f97316 67% 77%,#eab308 77% 85%,#06b6d4 85% 91%,#22c55e 91% 100%)"></div>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:#F7F4EF;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:10px;color:#6E6470">Holdings</span><span style="font-size:20px;font-weight:700">7</span></div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:7px">
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#6F2C91"></span><span style="font-weight:600">HPG</span><span style="margin-left:auto;color:#16a34a;font-weight:500">+8.2%</span><span style="color:#6E6470;width:32px;text-align:right">22%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#3b82f6"></span><span style="font-weight:600">FPT</span><span style="margin-left:auto;color:#16a34a;font-weight:500">+5.1%</span><span style="color:#6E6470;width:32px;text-align:right">18%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#14b8a6"></span><span style="font-weight:600">VNM</span><span style="margin-left:auto;color:#dc2626;font-weight:500">&minus;1.4%</span><span style="color:#6E6470;width:32px;text-align:right">15%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#a855f7"></span><span style="font-weight:600">VCB</span><span style="margin-left:auto;color:#16a34a;font-weight:500">+2.7%</span><span style="color:#6E6470;width:32px;text-align:right">12%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#f97316"></span><span style="font-weight:600">MWG</span><span style="margin-left:auto;color:#16a34a;font-weight:500">+3.9%</span><span style="color:#6E6470;width:32px;text-align:right">10%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#22c55e"></span><span style="font-weight:600">Cash</span><span style="margin-left:auto;color:#6E6470">&mdash;</span><span style="color:#6E6470;width:32px;text-align:right">9%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid #E7DFD6;display:flex;padding:9px 6px 0">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span style="font-size:10px;font-weight:500">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg><span style="font-size:10px;font-weight:500">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><span style="font-size:10px;font-weight:500">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg><span style="font-size:10px;font-weight:500">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#6F2C91"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg><span style="font-size:10px;font-weight:600">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:128px;height:5px;border-radius:3px;background:#2E2630"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== iOS Positions ===== -->
+      <div style="flex:none;width:390px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Positions</div>
+        <div style="width:390px;background:#0b0b0c;border-radius:54px;padding:11px;box-shadow:0 18px 50px rgba(46,38,48,.22)">
+          <div style="position:relative;width:368px;height:800px;background:#F4F0EA;border-radius:43px;overflow:hidden;color:#2E2630">
+            <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:112px;height:32px;background:#0b0b0c;border-radius:18px;z-index:20"></div>
+            <div style="height:52px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 7px;color:#2E2630">
+              <span style="font-size:15px;font-weight:600;letter-spacing:.2px">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="26" height="12" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;padding:4px 14px 4px">
+              <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#2E2630"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+              <h1 style="margin:0;font-size:20px;font-weight:700;letter-spacing:-.01em">Positions</h1>
+              <div style="flex:1"></div>
+              <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6E6470"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+            </div>
+            <div style="display:flex;align-items:center;padding:6px 14px 12px">
+              <div style="display:flex;gap:7px;flex:1;overflow:hidden;mask-image:linear-gradient(90deg,#000 86%,transparent)">
+                <span style="flex:none;padding:5px 12px;border-radius:999px;background:#6F2C91;color:#fff;font-size:11.5px;font-weight:600">All</span>
+                <span style="flex:none;padding:5px 12px;border-radius:999px;background:#fff;border:1px solid #E7DFD6;color:#6E6470;font-size:11.5px;font-weight:500">Running</span>
+                <span style="flex:none;padding:5px 12px;border-radius:999px;background:#fff;border:1px solid #E7DFD6;color:#6E6470;font-size:11.5px;font-weight:500">Opened</span>
+                <span style="flex:none;padding:5px 12px;border-radius:999px;background:#fff;border:1px solid #E7DFD6;color:#6E6470;font-size:11.5px;font-weight:500">Closing</span>
+                <span style="flex:none;padding:5px 12px;border-radius:999px;background:#fff;border:1px solid #E7DFD6;color:#6E6470;font-size:11.5px;font-weight:500">Closed</span>
+              </div>
+              <label style="display:flex;align-items:center;gap:6px;margin-left:11px;padding-left:11px;border-left:1px solid #E7DFD6">
+                <span style="width:16px;height:16px;border-radius:4px;background:#6F2C91;display:flex;align-items:center;justify-content:center"><svg width="10" height="8" viewBox="0 0 10 8" fill="none" stroke="#fff" stroke-width="2"><polyline points="1,4 4,7 9,1"/></svg></span>
+                <span style="font-size:11px;font-weight:500;color:#6E6470">Active</span>
+              </label>
+            </div>
+            <div class="ph-scroll" style="padding:0 14px;display:flex;flex-direction:column;gap:11px">
+              <!-- HPG live -->
+              <div style="background:#fff;border:1px solid #E7DFD6;border-left:4px solid #16a34a;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px;font-weight:700">HPG</span><span style="background:#dcfce7;color:#15803d;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">BUY</span></div>
+                  <div style="display:flex;align-items:center;gap:7px"><span style="background:rgba(111,44,145,.12);color:#6F2C91;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">Running</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9c2bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:7px;margin-top:5px"><span style="font-size:11px;color:#6E6470">2h ago</span><span style="font-size:11px;color:#c9c2bd">·</span><span style="background:#F0EBE3;color:#6E6470;font-size:10px;font-weight:500;padding:2px 7px;border-radius:999px">Swing</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Avg price</p><p style="margin:2px 0 0;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums">26,800</p><p style="margin:0;font-size:11px;color:#dc2626;font-variant-numeric:tabular-nums">25,400</p></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Size</p><p style="margin:2px 0 0;font-size:13px;color:#6E6470;font-variant-numeric:tabular-nums">1,200.0000</p></div>
+                  <div style="grid-column:span 2"><p style="margin:0 0 5px;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Capacity</p><div style="display:flex;align-items:center;gap:7px"><div style="height:6px;flex:1;border-radius:3px;background:#EFE9E1;overflow:hidden"><div style="height:100%;width:64%;background:#16a34a;border-radius:3px"></div></div><span style="font-size:10px;color:#6E6470;font-variant-numeric:tabular-nums">64%</span></div></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Current</p><p style="margin:2px 0 0;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums">27,650</p></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Return</p><p style="margin:2px 0 0;font-size:13px;font-weight:600;color:#16a34a;font-variant-numeric:tabular-nums">+2.84%</p></div>
+                </div>
+              </div>
+              <!-- SSI opened -->
+              <div style="background:#fff;border:1px solid #E7DFD6;border-left:4px solid #dc2626;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px;font-weight:700">SSI</span><span style="background:#fee2e2;color:#b91c1c;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">SELL</span></div>
+                  <div style="display:flex;align-items:center;gap:7px"><span style="background:#dbeafe;color:#1d4ed8;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">Opened</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9c2bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:7px;margin-top:5px"><span style="font-size:11px;color:#6E6470">4h ago</span><span style="font-size:11px;color:#c9c2bd">·</span><span style="background:#F0EBE3;color:#6E6470;font-size:10px;font-weight:500;padding:2px 7px;border-radius:999px">Intraday</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Avg price</p><p style="margin:2px 0 0;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums">31,900</p><p style="margin:0;font-size:11px;color:#dc2626;font-variant-numeric:tabular-nums">33,200</p></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Size</p><p style="margin:2px 0 0;font-size:13px;color:#6E6470;font-variant-numeric:tabular-nums">800.0000</p></div>
+                  <div style="grid-column:span 2"><p style="margin:0 0 5px;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Capacity</p><div style="display:flex;align-items:center;gap:7px"><div style="height:6px;flex:1;border-radius:3px;background:#EFE9E1;overflow:hidden"><div style="height:100%;width:42%;background:#dc2626;border-radius:3px"></div></div><span style="font-size:10px;color:#6E6470;font-variant-numeric:tabular-nums">42%</span></div></div>
+                </div>
+              </div>
+              <!-- VIC closing -->
+              <div style="background:#fff;border:1px solid #E7DFD6;border-left:4px solid #dc2626;border-radius:14px;box-shadow:0 1px 3px rgba(46,38,48,.04);padding:13px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:center;gap:8px"><span style="font-size:16px;font-weight:700">VIC</span><span style="background:#fee2e2;color:#b91c1c;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">SELL</span></div>
+                  <div style="display:flex;align-items:center;gap:7px"><span style="background:#fef3c7;color:#b45309;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">Closing</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c9c2bd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:7px;margin-top:5px"><span style="font-size:11px;color:#6E6470">2d ago</span><span style="font-size:11px;color:#c9c2bd">·</span><span style="background:#F0EBE3;color:#6E6470;font-size:10px;font-weight:500;padding:2px 7px;border-radius:999px">Swing</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Avg price</p><p style="margin:2px 0 0;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums">42,800</p><p style="margin:0;font-size:11px;color:#dc2626;font-variant-numeric:tabular-nums">44,500</p></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Size</p><p style="margin:2px 0 0;font-size:13px;color:#6E6470;font-variant-numeric:tabular-nums">600.0000</p></div>
+                  <div style="grid-column:span 2"><p style="margin:0 0 5px;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#9b94a0">Capacity</p><div style="display:flex;align-items:center;gap:7px"><div style="height:6px;flex:1;border-radius:3px;background:#EFE9E1;overflow:hidden"><div style="height:100%;width:35%;background:#dc2626;border-radius:3px"></div></div><span style="font-size:10px;color:#6E6470;font-variant-numeric:tabular-nums">35%</span></div></div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-top:1px solid #E7DFD6;display:flex;padding:9px 6px 0">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg><span style="font-size:10px;font-weight:500">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg><span style="font-size:10px;font-weight:500">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><span style="font-size:10px;font-weight:500">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#9b94a0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg><span style="font-size:10px;font-weight:500">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;color:#6F2C91"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg><span style="font-size:10px;font-weight:600">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:128px;height:5px;border-radius:3px;background:#2E2630"></div>
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+
+  <!-- ============ VARIATION 2 ============ -->
+  <div style="margin-bottom:20px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:22px">
+      <h2 style="margin:0;font-size:20px;font-weight:700;color:#2E2630">Variation 2 — Elevated</h2>
+      <span style="font:500 12px/1 ui-monospace,monospace;color:#6E6470">Android · Dark · purple glow</span>
+    </div>
+    <div style="display:flex;gap:40px;align-items:flex-start">
+      <!-- ===== Android Dashboard ===== -->
+      <div style="flex:none;width:360px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Dashboard</div>
+        <div style="width:360px;background:#000;border-radius:42px;padding:8px;box-shadow:0 18px 50px rgba(46,38,48,.28)">
+          <div style="position:relative;width:344px;height:790px;background:#18181b;border-radius:35px;overflow:hidden;color:#fafafa">
+            <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;z-index:20"></div>
+            <div style="height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#fafafa">
+              <span style="font-size:13px;font-weight:600">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="15" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="24" height="11" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 16px 12px">
+              <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">A</div>
+              <div style="line-height:1.15"><p style="margin:0;font-size:11px;color:#a1a1aa">Welcome back</p><p style="margin:0;font-size:15px;font-weight:600">Minh Nguyen</p></div>
+              <div style="flex:1"></div>
+              <div style="width:38px;height:38px;border-radius:12px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+            </div>
+            <div class="ph-scroll" style="padding:0 16px;display:flex;flex-direction:column;gap:13px">
+              <!-- market toggle -->
+              <div style="display:flex;gap:4px;background:#27272a;border:1px solid #3f3f46;border-radius:12px;padding:4px">
+                <span style="flex:1;text-align:center;padding:8px;border-radius:9px;background:#6F2C91;color:#fff;font-size:13px;font-weight:600">Stocks</span>
+                <span style="flex:1;text-align:center;padding:8px;border-radius:9px;color:#a1a1aa;font-size:13px;font-weight:500">Crypto</span>
+              </div>
+              <!-- hero VN-Index -->
+              <div style="position:relative;overflow:hidden;border-radius:18px;padding:18px;background:linear-gradient(135deg,#4B1F63,#6F2C91 70%);box-shadow:0 0 28px rgba(111,44,145,.4)">
+                <div style="position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;background:rgba(139,95,191,.45);filter:blur(34px)"></div>
+                <div style="position:relative">
+                  <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:rgba(255,255,255,.75)">VN-Index</span><span style="font-size:11px;background:rgba(255,255,255,.18);color:#fff;padding:3px 9px;border-radius:999px;font-weight:600">HOSE</span></div>
+                  <p style="margin:9px 0 2px;font-size:36px;font-weight:700;letter-spacing:-.02em;color:#fff">1,284.32</p>
+                  <p style="margin:0;font-size:13px;font-weight:600;color:#86efac">+10.7 (+0.84%) today</p>
+                  <div style="display:flex;align-items:flex-end;gap:4px;height:34px;margin-top:14px;opacity:.9">
+                    <div style="flex:1;height:40%;background:rgba(255,255,255,.45);border-radius:2px"></div><div style="flex:1;height:55%;background:rgba(255,255,255,.45);border-radius:2px"></div><div style="flex:1;height:48%;background:rgba(255,255,255,.45);border-radius:2px"></div><div style="flex:1;height:70%;background:rgba(255,255,255,.55);border-radius:2px"></div><div style="flex:1;height:62%;background:rgba(255,255,255,.55);border-radius:2px"></div><div style="flex:1;height:85%;background:rgba(255,255,255,.7);border-radius:2px"></div><div style="flex:1;height:78%;background:rgba(255,255,255,.7);border-radius:2px"></div><div style="flex:1;height:100%;background:#fff;border-radius:2px"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- kpi row -->
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px">
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:13px;padding:12px"><p style="margin:0;font-size:10.5px;color:#a1a1aa">VN30</p><p style="margin:5px 0 0;font-size:15px;font-weight:600">1,342</p><p style="margin:2px 0 0;font-size:11px;font-weight:500;color:#4ade80">+0.62%</p></div>
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:13px;padding:12px"><p style="margin:0;font-size:10.5px;color:#a1a1aa">HOSE</p><p style="margin:5px 0 0;font-size:15px;font-weight:600">18.4<span style="font-size:11px;color:#a1a1aa">K B</span></p><p style="margin:2px 0 0;font-size:11px;color:#a1a1aa">Turnover</p></div>
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:13px;padding:12px"><p style="margin:0;font-size:10.5px;color:#a1a1aa">Foreign</p><p style="margin:5px 0 0;font-size:15px;font-weight:600;color:#4ade80">+312<span style="font-size:11px;color:#a1a1aa">B</span></p><p style="margin:2px 0 0;font-size:11px;color:#a1a1aa">Net</p></div>
+              </div>
+              <!-- recent signals -->
+              <div style="background:#27272a;border:1px solid #3f3f46;border-radius:16px;padding:15px">
+                <p style="margin:0 0 12px;font-size:14px;font-weight:600">Recent signals</p>
+                <div style="display:flex;flex-direction:column;gap:11px">
+                  <div style="display:flex;align-items:center;justify-content:space-between"><div style="display:flex;align-items:center;gap:11px"><div style="width:34px;height:34px;border-radius:10px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#b794d4" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><div><p style="margin:0;font-size:14px;font-weight:600">HPG</p><p style="margin:1px 0 0;font-size:11.5px;color:#a1a1aa">Buy · Strong</p></div></div><span style="font-size:11.5px;color:#a1a1aa">4m</span></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between"><div style="display:flex;align-items:center;gap:11px"><div style="width:34px;height:34px;border-radius:10px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#b794d4" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><div><p style="margin:0;font-size:14px;font-weight:600">SSI</p><p style="margin:1px 0 0;font-size:11.5px;color:#a1a1aa">Sell · Moderate</p></div></div><span style="font-size:11.5px;color:#a1a1aa">12m</span></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between"><div style="display:flex;align-items:center;gap:11px"><div style="width:34px;height:34px;border-radius:10px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#b794d4" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><div><p style="margin:0;font-size:14px;font-weight:600">FPT</p><p style="margin:1px 0 0;font-size:11.5px;color:#a1a1aa">Buy · Strong</p></div></div><span style="font-size:11.5px;color:#a1a1aa">18m</span></div>
+                </div>
+              </div>
+            </div>
+            <!-- material bottom nav -->
+            <div style="position:absolute;bottom:0;left:0;right:0;height:74px;background:#1e1e21;border-top:1px solid #3f3f46;display:flex;align-items:center;padding:0 6px">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;border-radius:999px;background:rgba(139,95,191,.22);color:#b794d4"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M3 10.5 12 3l9 7.5V21h-6v-6h-6v6H3z"/></svg></div><span style="font-size:10px;font-weight:600;color:#b794d4">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div><span style="font-size:10px;color:#a1a1aa">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg></div><span style="font-size:10px;color:#a1a1aa">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:108px;height:4px;border-radius:3px;background:#52525b"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Android Market ===== -->
+      <div style="flex:none;width:360px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Market</div>
+        <div style="width:360px;background:#000;border-radius:42px;padding:8px;box-shadow:0 18px 50px rgba(46,38,48,.28)">
+          <div style="position:relative;width:344px;height:790px;background:#18181b;border-radius:35px;overflow:hidden;color:#fafafa">
+            <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;z-index:20"></div>
+            <div style="height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#fafafa">
+              <span style="font-size:13px;font-weight:600">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="15" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="24" height="11" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 16px 12px">
+              <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">A</div>
+              <p style="margin:0;font-size:18px;font-weight:700;letter-spacing:-.01em">Market</p>
+              <div style="flex:1"></div>
+              <div style="width:38px;height:38px;border-radius:12px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+            </div>
+            <div class="ph-scroll" style="padding:0 16px;display:flex;flex-direction:column;gap:13px">
+              <div style="display:flex;gap:4px;background:#27272a;border:1px solid #3f3f46;border-radius:12px;padding:4px">
+                <span style="flex:1;text-align:center;padding:8px;border-radius:9px;background:#6F2C91;color:#fff;font-size:13px;font-weight:600">Stocks</span>
+                <span style="flex:1;text-align:center;padding:8px;border-radius:9px;color:#a1a1aa;font-size:13px;font-weight:500">Crypto</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px">
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:13px;padding:13px"><p style="margin:0;font-size:11px;color:#a1a1aa">VN-Index</p><p style="margin:5px 0 0;font-size:18px;font-weight:600">1,284.32</p><p style="margin:2px 0 0;font-size:11.5px;font-weight:500;color:#4ade80">+0.84%</p></div>
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:13px;padding:13px"><p style="margin:0;font-size:11px;color:#a1a1aa">VN30</p><p style="margin:5px 0 0;font-size:18px;font-weight:600">1,342.10</p><p style="margin:2px 0 0;font-size:11.5px;font-weight:500;color:#4ade80">+0.62%</p></div>
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:13px;padding:13px"><p style="margin:0;font-size:11px;color:#a1a1aa">HOSE Value</p><p style="margin:5px 0 0;font-size:18px;font-weight:600">18,420<span style="font-size:11px;color:#a1a1aa"> B</span></p><p style="margin:2px 0 0;font-size:11.5px;color:#a1a1aa">Session</p></div>
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:13px;padding:13px"><p style="margin:0;font-size:11px;color:#a1a1aa">Net Foreign</p><p style="margin:5px 0 0;font-size:18px;font-weight:600;color:#4ade80">+312.4<span style="font-size:11px;color:#a1a1aa"> B</span></p><p style="margin:2px 0 0;font-size:11.5px;color:#a1a1aa">Today</p></div>
+              </div>
+              <div style="background:#27272a;border:1px solid #3f3f46;border-radius:16px;padding:15px">
+                <p style="margin:0 0 12px;font-size:14px;font-weight:600">Top movers</p>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">HPG</p><p style="margin:1px 0 0;font-size:11px;color:#a1a1aa">Hoa Phat Group</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">27,650</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#4ade80">+3.2%</p></div></div>
+                  <div style="height:1px;background:#3f3f46"></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">FPT</p><p style="margin:1px 0 0;font-size:11px;color:#a1a1aa">FPT Corporation</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">134,500</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#4ade80">+2.4%</p></div></div>
+                  <div style="height:1px;background:#3f3f46"></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">VHM</p><p style="margin:1px 0 0;font-size:11px;color:#a1a1aa">Vinhomes</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">42,100</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#4ade80">+1.8%</p></div></div>
+                  <div style="height:1px;background:#3f3f46"></div>
+                  <div style="display:flex;justify-content:space-between;align-items:center"><div><p style="margin:0;font-size:14px;font-weight:600">VIC</p><p style="margin:1px 0 0;font-size:11px;color:#a1a1aa">Vingroup</p></div><div style="text-align:right"><p style="margin:0;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums">41,250</p><p style="margin:1px 0 0;font-size:11.5px;font-weight:500;color:#f87171">&minus;1.1%</p></div></div>
+                </div>
+              </div>
+              <div style="background:#27272a;border:1px solid #3f3f46;border-radius:16px;padding:15px">
+                <p style="margin:0 0 13px;font-size:14px;font-weight:600">Market sentiment</p>
+                <div style="display:flex;flex-direction:column;gap:11px">
+                  <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#a1a1aa">Bullish</span><span style="font-weight:600">62%</span></div><div style="height:7px;border-radius:4px;background:#3f3f46;overflow:hidden"><div style="height:100%;width:62%;background:#4ade80;border-radius:4px"></div></div></div>
+                  <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#a1a1aa">Neutral</span><span style="font-weight:600">24%</span></div><div style="height:7px;border-radius:4px;background:#3f3f46;overflow:hidden"><div style="height:100%;width:24%;background:#8B5FBF;border-radius:4px"></div></div></div>
+                  <div><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#a1a1aa">Bearish</span><span style="font-weight:600">14%</span></div><div style="height:7px;border-radius:4px;background:#3f3f46;overflow:hidden"><div style="height:100%;width:14%;background:#f87171;border-radius:4px"></div></div></div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:74px;background:#1e1e21;border-top:1px solid #3f3f46;display:flex;align-items:center;padding:0 6px">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></div><span style="font-size:10px;color:#a1a1aa">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;border-radius:999px;background:rgba(139,95,191,.22);color:#b794d4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div><span style="font-size:10px;font-weight:600;color:#b794d4">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg></div><span style="font-size:10px;color:#a1a1aa">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:108px;height:4px;border-radius:3px;background:#52525b"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Android Signals ===== -->
+      <div style="flex:none;width:360px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Signals</div>
+        <div style="width:360px;background:#000;border-radius:42px;padding:8px;box-shadow:0 18px 50px rgba(46,38,48,.28)">
+          <div style="position:relative;width:344px;height:790px;background:#18181b;border-radius:35px;overflow:hidden;color:#fafafa">
+            <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;z-index:20"></div>
+            <div style="height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#fafafa">
+              <span style="font-size:13px;font-weight:600">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="15" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="24" height="11" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 16px 12px">
+              <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">A</div>
+              <p style="margin:0;font-size:18px;font-weight:700;letter-spacing:-.01em">Trading signals</p>
+              <div style="flex:1"></div>
+              <div style="width:38px;height:38px;border-radius:12px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+            </div>
+            <div style="padding:0 16px 12px">
+              <div style="display:flex;align-items:center;gap:9px;height:44px;background:#27272a;border:1px solid #3f3f46;border-radius:12px;padding:0 13px;color:#a1a1aa"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg><span style="font-size:13px">Filter by symbol</span></div>
+            </div>
+            <div class="ph-scroll" style="padding:0 16px;display:flex;flex-direction:column;gap:11px">
+              <div style="background:#27272a;border:1px solid #3f3f46;border-left:4px solid #4ade80;border-radius:14px;padding:14px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start"><span style="font-size:18px;font-weight:700">HPG</span><span style="background:rgba(74,222,128,.16);color:#4ade80;font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px">BUY</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px">
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Qty</p><p style="margin:3px 0 0;font-size:13px;font-weight:600;color:#60a5fa;font-variant-numeric:tabular-nums">5.20%</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Price</p><p style="margin:3px 0 0;font-size:13px;font-variant-numeric:tabular-nums">27,650</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Time</p><p style="margin:3px 0 0;font-size:13px;color:#a1a1aa">4m ago</p></div>
+                </div>
+              </div>
+              <div style="background:#27272a;border:1px solid #3f3f46;border-left:4px solid #f87171;border-radius:14px;padding:14px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start"><span style="font-size:18px;font-weight:700">SSI</span><span style="background:rgba(248,113,113,.16);color:#f87171;font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px">SELL</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px">
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Qty</p><p style="margin:3px 0 0;font-size:13px;font-weight:600;color:#fb923c;font-variant-numeric:tabular-nums">12.40%</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Price</p><p style="margin:3px 0 0;font-size:13px;font-variant-numeric:tabular-nums">31,200</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Time</p><p style="margin:3px 0 0;font-size:13px;color:#a1a1aa">12m ago</p></div>
+                </div>
+              </div>
+              <div style="background:#27272a;border:1px solid #3f3f46;border-left:4px solid #4ade80;border-radius:14px;padding:14px">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start"><span style="font-size:18px;font-weight:700">FPT</span><span style="background:rgba(74,222,128,.16);color:#4ade80;font-size:11px;font-weight:600;padding:3px 10px;border-radius:999px">BUY</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px">
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Qty</p><p style="margin:3px 0 0;font-size:13px;font-weight:600;color:#60a5fa;font-variant-numeric:tabular-nums">2.10%</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Price</p><p style="margin:3px 0 0;font-size:13px;font-variant-numeric:tabular-nums">134,500</p></div>
+                  <div><p style="margin:0;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Time</p><p style="margin:3px 0 0;font-size:13px;color:#a1a1aa">18m ago</p></div>
+                </div>
+              </div>
+              <div style="position:relative;background:#27272a;border:1px solid #3f3f46;border-radius:16px;overflow:hidden;padding:15px">
+                <div style="filter:blur(3px);opacity:.5;pointer-events:none">
+                  <p style="margin:0 0 9px;font-size:14px;font-weight:600">Advanced analytics</p>
+                  <div style="height:96px;border-radius:10px;background:#1e1e21;display:flex;align-items:flex-end;gap:5px;padding:10px">
+                    <div style="flex:1;height:40%;background:#6F2C91;border-radius:3px"></div><div style="flex:1;height:70%;background:#6F2C91;border-radius:3px"></div><div style="flex:1;height:55%;background:#6F2C91;border-radius:3px"></div><div style="flex:1;height:85%;background:#8B5FBF;border-radius:3px"></div><div style="flex:1;height:60%;background:#6F2C91;border-radius:3px"></div><div style="flex:1;height:45%;background:#6F2C91;border-radius:3px"></div>
+                  </div>
+                </div>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+                  <div style="display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:10px;background:#6F2C91;color:#fff;font-size:13px;font-weight:600;box-shadow:0 0 20px rgba(111,44,145,.45)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Unlock analytics</div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:74px;background:#1e1e21;border-top:1px solid #3f3f46;display:flex;align-items:center;padding:0 6px">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></div><span style="font-size:10px;color:#a1a1aa">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div><span style="font-size:10px;color:#a1a1aa">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;border-radius:999px;background:rgba(139,95,191,.22);color:#b794d4"><svg width="22" height="22" viewBox="0 0 24 24" fill="#b794d4" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span style="font-size:10px;font-weight:600;color:#b794d4">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg></div><span style="font-size:10px;color:#a1a1aa">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:108px;height:4px;border-radius:3px;background:#52525b"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Android Watchlist ===== -->
+      <div style="flex:none;width:360px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Watchlist</div>
+        <div style="width:360px;background:#000;border-radius:42px;padding:8px;box-shadow:0 18px 50px rgba(46,38,48,.28)">
+          <div style="position:relative;width:344px;height:790px;background:#18181b;border-radius:35px;overflow:hidden;color:#fafafa">
+            <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;z-index:20"></div>
+            <div style="height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#fafafa">
+              <span style="font-size:13px;font-weight:600">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="15" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="24" height="11" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 16px 12px">
+              <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">A</div>
+              <div style="line-height:1.15"><p style="margin:0;font-size:18px;font-weight:700;letter-spacing:-.01em">Watchlist</p><p style="margin:0;font-size:11px;color:#a1a1aa">8 assets tracked</p></div>
+              <div style="flex:1"></div>
+              <div style="width:38px;height:38px;border-radius:12px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+            </div>
+            <div class="ph-scroll" style="padding:0 16px;display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:11px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">VNM</p><p style="margin:1px 0 0;font-size:12px;color:#a1a1aa">Vinamilk</p></div></div>
+                <div style="text-align:right"><p style="margin:0;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums">68,900</p><p style="margin:1px 0 0;font-size:11.5px;color:#4ade80">+1.2%</p></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:11px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">VCB</p><p style="margin:1px 0 0;font-size:12px;color:#a1a1aa">Vietcombank</p></div></div>
+                <div style="text-align:right"><p style="margin:0;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums">92,400</p><p style="margin:1px 0 0;font-size:11.5px;color:#4ade80">+0.5%</p></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:11px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">ACB</p><p style="margin:1px 0 0;font-size:12px;color:#a1a1aa">Asia Commercial Bank</p></div></div>
+                <div style="text-align:right"><p style="margin:0;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums">24,150</p><p style="margin:1px 0 0;font-size:11.5px;color:#f87171">&minus;0.8%</p></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:11px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">GAS</p><p style="margin:1px 0 0;font-size:12px;color:#a1a1aa">PetroVietnam Gas</p></div></div>
+                <div style="text-align:right"><p style="margin:0;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums">78,300</p><p style="margin:1px 0 0;font-size:11.5px;color:#4ade80">+2.1%</p></div>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:13px">
+                <div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:11px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><div><p style="margin:0;font-size:15px;font-weight:600">MSN</p><p style="margin:1px 0 0;font-size:12px;color:#a1a1aa">Masan Group</p></div></div>
+                <p style="margin:0;font-size:13px;font-weight:500;color:#71717a">Unavailable</p>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:74px;background:#1e1e21;border-top:1px solid #3f3f46;display:flex;align-items:center;padding:0 6px">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></div><span style="font-size:10px;color:#a1a1aa">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div><span style="font-size:10px;color:#a1a1aa">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;border-radius:999px;background:rgba(139,95,191,.22);color:#b794d4"><svg width="22" height="22" viewBox="0 0 24 24" fill="#b794d4" stroke="none"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><span style="font-size:10px;font-weight:600;color:#b794d4">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg></div><span style="font-size:10px;color:#a1a1aa">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:108px;height:4px;border-radius:3px;background:#52525b"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Android Portfolio ===== -->
+      <div style="flex:none;width:360px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Portfolio</div>
+        <div style="width:360px;background:#000;border-radius:42px;padding:8px;box-shadow:0 18px 50px rgba(46,38,48,.28)">
+          <div style="position:relative;width:344px;height:790px;background:#18181b;border-radius:35px;overflow:hidden;color:#fafafa">
+            <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;z-index:20"></div>
+            <div style="height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#fafafa">
+              <span style="font-size:13px;font-weight:600">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="15" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="24" height="11" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 16px 12px">
+              <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px">A</div>
+              <p style="margin:0;font-size:18px;font-weight:700;letter-spacing:-.01em">Portfolio</p>
+              <div style="flex:1"></div>
+              <div style="width:38px;height:38px;border-radius:12px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+            </div>
+            <div class="ph-scroll" style="padding:0 16px;display:flex;flex-direction:column;gap:13px">
+              <!-- hero total value -->
+              <div style="position:relative;overflow:hidden;border-radius:18px;padding:18px;background:linear-gradient(135deg,#4B1F63,#6F2C91 75%);box-shadow:0 0 28px rgba(111,44,145,.4)">
+                <div style="position:absolute;right:-30px;top:-30px;width:130px;height:130px;border-radius:50%;background:rgba(139,95,191,.45);filter:blur(34px)"></div>
+                <div style="position:relative">
+                  <span style="font-size:12px;color:rgba(255,255,255,.75)">Total portfolio value</span>
+                  <p style="margin:8px 0 2px;font-size:32px;font-weight:700;letter-spacing:-.02em;color:#fff">2,450.8<span style="font-size:18px;color:rgba(255,255,255,.7)"> M</span></p>
+                  <p style="margin:0;font-size:13px;font-weight:600;color:#86efac">+184.2 M (+8.1%) all time</p>
+                  <div style="display:flex;gap:18px;margin-top:14px">
+                    <div><p style="margin:0;font-size:11px;color:rgba(255,255,255,.7)">Cash</p><p style="margin:2px 0 0;font-size:14px;font-weight:600;color:#fff">312.4 M · 12.7%</p></div>
+                    <div><p style="margin:0;font-size:11px;color:rgba(255,255,255,.7)">Positions</p><p style="margin:2px 0 0;font-size:14px;font-weight:600;color:#fff">7</p></div>
+                  </div>
+                </div>
+              </div>
+              <!-- allocation -->
+              <div style="background:#27272a;border:1px solid #3f3f46;border-radius:16px;padding:16px">
+                <p style="margin:0 0 14px;font-size:14px;font-weight:600">Allocation</p>
+                <div style="display:flex;align-items:center;gap:16px">
+                  <div style="position:relative;width:128px;height:128px;flex:none">
+                    <div style="width:128px;height:128px;border-radius:50%;background:conic-gradient(#6F2C91 0 22%,#3b82f6 22% 40%,#14b8a6 40% 55%,#a855f7 55% 67%,#f97316 67% 77%,#eab308 77% 85%,#06b6d4 85% 91%,#22c55e 91% 100%)"></div>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:#27272a;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:10px;color:#a1a1aa">Holdings</span><span style="font-size:20px;font-weight:700">7</span></div>
+                  </div>
+                  <div style="flex:1;display:flex;flex-direction:column;gap:7px">
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#6F2C91"></span><span style="font-weight:600">HPG</span><span style="margin-left:auto;color:#4ade80;font-weight:500">+8.2%</span><span style="color:#a1a1aa;width:32px;text-align:right">22%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#3b82f6"></span><span style="font-weight:600">FPT</span><span style="margin-left:auto;color:#4ade80;font-weight:500">+5.1%</span><span style="color:#a1a1aa;width:32px;text-align:right">18%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#14b8a6"></span><span style="font-weight:600">VNM</span><span style="margin-left:auto;color:#f87171;font-weight:500">&minus;1.4%</span><span style="color:#a1a1aa;width:32px;text-align:right">15%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#a855f7"></span><span style="font-weight:600">VCB</span><span style="margin-left:auto;color:#4ade80;font-weight:500">+2.7%</span><span style="color:#a1a1aa;width:32px;text-align:right">12%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#f97316"></span><span style="font-weight:600">MWG</span><span style="margin-left:auto;color:#4ade80;font-weight:500">+3.9%</span><span style="color:#a1a1aa;width:32px;text-align:right">10%</span></div>
+                    <div style="display:flex;align-items:center;gap:7px;font-size:12px"><span style="width:9px;height:9px;border-radius:2px;background:#22c55e"></span><span style="font-weight:600">Cash</span><span style="margin-left:auto;color:#a1a1aa">&mdash;</span><span style="color:#a1a1aa;width:32px;text-align:right">9%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:74px;background:#1e1e21;border-top:1px solid #3f3f46;display:flex;align-items:center;padding:0 6px">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></div><span style="font-size:10px;color:#a1a1aa">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div><span style="font-size:10px;color:#a1a1aa">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;border-radius:999px;background:rgba(139,95,191,.22);color:#b794d4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg></div><span style="font-size:10px;font-weight:600;color:#b794d4">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:108px;height:4px;border-radius:3px;background:#52525b"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Android Positions ===== -->
+      <div style="flex:none;width:360px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Positions</div>
+        <div style="width:360px;background:#000;border-radius:42px;padding:8px;box-shadow:0 18px 50px rgba(46,38,48,.28)">
+          <div style="position:relative;width:344px;height:790px;background:#18181b;border-radius:35px;overflow:hidden;color:#fafafa">
+            <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;z-index:20"></div>
+            <div style="height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#fafafa">
+              <span style="font-size:13px;font-weight:600">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="15" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="24" height="11" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;padding:8px 14px 6px">
+              <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fafafa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
+              <p style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em">Positions</p>
+              <div style="flex:1"></div>
+              <div style="width:38px;height:38px;border-radius:12px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+            </div>
+            <div style="display:flex;align-items:center;padding:6px 14px 12px">
+              <div style="display:flex;gap:7px;flex:1;overflow:hidden;mask-image:linear-gradient(90deg,#000 86%,transparent)">
+                <span style="flex:none;padding:5px 13px;border-radius:999px;background:#6F2C91;color:#fff;font-size:11.5px;font-weight:600">All</span>
+                <span style="flex:none;padding:5px 13px;border-radius:999px;background:#27272a;border:1px solid #3f3f46;color:#a1a1aa;font-size:11.5px;font-weight:500">Running</span>
+                <span style="flex:none;padding:5px 13px;border-radius:999px;background:#27272a;border:1px solid #3f3f46;color:#a1a1aa;font-size:11.5px;font-weight:500">Opened</span>
+                <span style="flex:none;padding:5px 13px;border-radius:999px;background:#27272a;border:1px solid #3f3f46;color:#a1a1aa;font-size:11.5px;font-weight:500">Closing</span>
+                <span style="flex:none;padding:5px 13px;border-radius:999px;background:#27272a;border:1px solid #3f3f46;color:#a1a1aa;font-size:11.5px;font-weight:500">Closed</span>
+              </div>
+              <label style="display:flex;align-items:center;gap:6px;margin-left:11px;padding-left:11px;border-left:1px solid #3f3f46">
+                <span style="width:16px;height:16px;border-radius:4px;background:#6F2C91;display:flex;align-items:center;justify-content:center"><svg width="10" height="8" viewBox="0 0 10 8" fill="none" stroke="#fff" stroke-width="2"><polyline points="1,4 4,7 9,1"/></svg></span>
+                <span style="font-size:11px;font-weight:500;color:#a1a1aa">Active</span>
+              </label>
+            </div>
+            <div class="ph-scroll" style="padding:0 14px;display:flex;flex-direction:column;gap:11px">
+              <!-- HPG live -->
+              <div style="background:#27272a;border:1px solid #3f3f46;border-left:4px solid #4ade80;border-radius:14px;padding:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:center;gap:8px"><span style="font-size:17px;font-weight:700">HPG</span><span style="background:rgba(74,222,128,.16);color:#4ade80;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">BUY</span></div>
+                  <div style="display:flex;align-items:center;gap:7px"><span style="background:rgba(139,95,191,.2);color:#b794d4;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">Running</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52525b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:7px;margin-top:5px"><span style="font-size:11px;color:#a1a1aa">2h ago</span><span style="font-size:11px;color:#52525b">·</span><span style="background:#3f3f46;color:#a1a1aa;font-size:10px;font-weight:500;padding:2px 7px;border-radius:999px">Swing</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Avg price</p><p style="margin:2px 0 0;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums">26,800</p><p style="margin:0;font-size:11px;color:#f87171;font-variant-numeric:tabular-nums">25,400</p></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Size</p><p style="margin:2px 0 0;font-size:13px;color:#a1a1aa;font-variant-numeric:tabular-nums">1,200.0000</p></div>
+                  <div style="grid-column:span 2"><p style="margin:0 0 5px;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Capacity</p><div style="display:flex;align-items:center;gap:7px"><div style="height:6px;flex:1;border-radius:3px;background:#3f3f46;overflow:hidden"><div style="height:100%;width:64%;background:#4ade80;border-radius:3px"></div></div><span style="font-size:10px;color:#a1a1aa;font-variant-numeric:tabular-nums">64%</span></div></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Current</p><p style="margin:2px 0 0;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums">27,650</p></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Return</p><p style="margin:2px 0 0;font-size:13px;font-weight:600;color:#4ade80;font-variant-numeric:tabular-nums">+2.84%</p></div>
+                </div>
+              </div>
+              <!-- SSI opened -->
+              <div style="background:#27272a;border:1px solid #3f3f46;border-left:4px solid #f87171;border-radius:14px;padding:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:center;gap:8px"><span style="font-size:17px;font-weight:700">SSI</span><span style="background:rgba(248,113,113,.16);color:#f87171;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">SELL</span></div>
+                  <div style="display:flex;align-items:center;gap:7px"><span style="background:rgba(96,165,250,.18);color:#60a5fa;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">Opened</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52525b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:7px;margin-top:5px"><span style="font-size:11px;color:#a1a1aa">4h ago</span><span style="font-size:11px;color:#52525b">·</span><span style="background:#3f3f46;color:#a1a1aa;font-size:10px;font-weight:500;padding:2px 7px;border-radius:999px">Intraday</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Avg price</p><p style="margin:2px 0 0;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums">31,900</p><p style="margin:0;font-size:11px;color:#f87171;font-variant-numeric:tabular-nums">33,200</p></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Size</p><p style="margin:2px 0 0;font-size:13px;color:#a1a1aa;font-variant-numeric:tabular-nums">800.0000</p></div>
+                  <div style="grid-column:span 2"><p style="margin:0 0 5px;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Capacity</p><div style="display:flex;align-items:center;gap:7px"><div style="height:6px;flex:1;border-radius:3px;background:#3f3f46;overflow:hidden"><div style="height:100%;width:42%;background:#f87171;border-radius:3px"></div></div><span style="font-size:10px;color:#a1a1aa;font-variant-numeric:tabular-nums">42%</span></div></div>
+                </div>
+              </div>
+              <!-- VIC closing -->
+              <div style="background:#27272a;border:1px solid #3f3f46;border-left:4px solid #f87171;border-radius:14px;padding:14px">
+                <div style="display:flex;align-items:center;justify-content:space-between">
+                  <div style="display:flex;align-items:center;gap:8px"><span style="font-size:17px;font-weight:700">VIC</span><span style="background:rgba(248,113,113,.16);color:#f87171;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">SELL</span></div>
+                  <div style="display:flex;align-items:center;gap:7px"><span style="background:rgba(251,191,36,.18);color:#fbbf24;font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px">Closing</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#52525b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></div>
+                </div>
+                <div style="display:flex;align-items:center;gap:7px;margin-top:5px"><span style="font-size:11px;color:#a1a1aa">2d ago</span><span style="font-size:11px;color:#52525b">·</span><span style="background:#3f3f46;color:#a1a1aa;font-size:10px;font-weight:500;padding:2px 7px;border-radius:999px">Swing</span></div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 10px;margin-top:11px">
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Avg price</p><p style="margin:2px 0 0;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums">42,800</p><p style="margin:0;font-size:11px;color:#f87171;font-variant-numeric:tabular-nums">44,500</p></div>
+                  <div><p style="margin:0;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Size</p><p style="margin:2px 0 0;font-size:13px;color:#a1a1aa;font-variant-numeric:tabular-nums">600.0000</p></div>
+                  <div style="grid-column:span 2"><p style="margin:0 0 5px;font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#71717a">Capacity</p><div style="display:flex;align-items:center;gap:7px"><div style="height:6px;flex:1;border-radius:3px;background:#3f3f46;overflow:hidden"><div style="height:100%;width:35%;background:#f87171;border-radius:3px"></div></div><span style="font-size:10px;color:#a1a1aa;font-variant-numeric:tabular-nums">35%</span></div></div>
+                </div>
+              </div>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:74px;background:#1e1e21;border-top:1px solid #3f3f46;display:flex;align-items:center;padding:0 6px">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg></div><span style="font-size:10px;color:#a1a1aa">Home</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div><span style="font-size:10px;color:#a1a1aa">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;color:#a1a1aa"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><span style="font-size:10px;color:#a1a1aa">Watch</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 18px;border-radius:999px;background:rgba(139,95,191,.22);color:#b794d4"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg></div><span style="font-size:10px;font-weight:600;color:#b794d4">Folio</span></div>
+            </div>
+            <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:108px;height:4px;border-radius:3px;background:#52525b"></div>
+          </div>
+        </div>
+      </div>
+</div>
+  </div>
+
+  <!-- ============ NAVIGATION PROPOSAL ============ -->
+  <div style="margin-bottom:20px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:8px">
+      <h2 style="margin:0;font-size:20px;font-weight:700;color:#2E2630">Navigation — 8 destinations on a phone</h2>
+      <span style="font:500 12px/1 ui-monospace,monospace;color:#6E6470">4 primary tabs + More sheet</span>
+    </div>
+    <p style="max-width:780px;margin:0 0 18px;font-size:14px;line-height:1.6;color:#6E6470">A bottom bar holds <strong style="color:#2E2630">five slots</strong> before labels start colliding. The web app's eight items split into the four highest-frequency destinations kept always-visible, plus a fifth <strong style="color:#2E2630">More</strong> slot that opens a sheet for the rest. Shown in the Android dark theme.</p>
+
+    <!-- mapping legend -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;max-width:780px;margin-bottom:26px">
+      <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #E7DFD6;border-radius:11px;padding:10px 14px">
+        <span style="font:600 10px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6F2C91;white-space:nowrap">In the bar</span>
+        <span style="font-size:12.5px;font-weight:600;color:#2E2630">Dashboard · Market · Signals · Positions</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #E7DFD6;border-radius:11px;padding:10px 14px">
+        <span style="font:600 10px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;white-space:nowrap">Under More</span>
+        <span style="font-size:12.5px;font-weight:600;color:#2E2630">Watchlist · Portfolio · Analytics · AI Analysis</span>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:40px;align-items:flex-start">
+
+      <!-- ===== Primary bar ===== -->
+      <div style="flex:none;width:360px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">Primary bar</div>
+        <div style="width:360px;background:#000;border-radius:42px;padding:8px;box-shadow:0 18px 50px rgba(46,38,48,.28)">
+          <div style="position:relative;width:344px;height:790px;background:#18181b;border-radius:35px;overflow:hidden;color:#fafafa">
+            <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;z-index:20"></div>
+            <div style="height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#fafafa">
+              <span style="font-size:13px;font-weight:600">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="15" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="24" height="11" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:9px;padding:8px 16px 8px">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px">A</div>
+              <span style="font-size:16px;font-weight:600">ALumiEye</span>
+              <div style="flex:1"></div>
+              <div style="width:36px;height:36px;border-radius:12px;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></div>
+            </div>
+            <div style="padding:4px 16px 14px">
+              <h1 style="margin:0;font-size:21px;font-weight:700;letter-spacing:-.01em">Welcome, Minh</h1>
+              <p style="margin:3px 0 0;font-size:12.5px;color:#a1a1aa">Your markets at a glance</p>
+            </div>
+            <div class="ph-scroll" style="padding:0 16px;display:flex;flex-direction:column;gap:12px">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:11px">
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:flex-start"><p style="margin:0;font-size:11.5px;font-weight:500;color:#a1a1aa">VN-Index</p><div style="width:26px;height:26px;border-radius:8px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div></div><p style="margin:7px 0 0;font-size:20px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums">1,284.32</p><p style="margin:3px 0 0;font-size:12px;font-weight:500;color:#4ade80">+0.84% today</p></div>
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:14px"><div style="display:flex;justify-content:space-between;align-items:flex-start"><p style="margin:0;font-size:11.5px;font-weight:500;color:#a1a1aa">My P&amp;L</p><div style="width:26px;height:26px;border-radius:8px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="m12 12 8 4"/></svg></div></div><p style="margin:7px 0 0;font-size:20px;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums">+62.4<span style="font-size:12px;font-weight:500;color:#a1a1aa">M</span></p><p style="margin:3px 0 0;font-size:12px;font-weight:500;color:#4ade80">+2.6% total</p></div>
+              </div>
+              <div style="background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:15px">
+                <p style="margin:0 0 12px;font-size:14px;font-weight:600">Recent signals</p>
+                <div style="display:flex;flex-direction:column;gap:9px">
+                  <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #3f3f46;border-radius:11px;padding:10px 11px"><div style="display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#b794d4" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><div><p style="margin:0;font-size:14px;font-weight:600">HPG</p><p style="margin:1px 0 0;font-size:11.5px;color:#a1a1aa">Buy · Strong</p></div></div><span style="font-size:11.5px;color:#a1a1aa">4m</span></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;border:1px solid #3f3f46;border-radius:11px;padding:10px 11px"><div style="display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="#b794d4" stroke="none"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg><div><p style="margin:0;font-size:14px;font-weight:600">FPT</p><p style="margin:1px 0 0;font-size:11.5px;color:#a1a1aa">Buy · Strong</p></div></div><span style="font-size:11.5px;color:#a1a1aa">18m</span></div>
+                </div>
+              </div>
+            </div>
+            <!-- 5-slot bottom bar : Dashboard active -->
+            <div style="position:absolute;bottom:0;left:0;right:0;height:74px;background:#1e1e21;border-top:1px solid #3f3f46;display:flex;align-items:center;padding:0 4px">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;border-radius:999px;background:rgba(139,95,191,.22);color:#b794d4"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><span style="font-size:9.5px;font-weight:600;color:#b794d4">Dashboard</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;color:#a1a1aa"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div><span style="font-size:9.5px;color:#a1a1aa">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;color:#a1a1aa"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span style="font-size:9.5px;color:#a1a1aa">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;color:#a1a1aa"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><span style="font-size:9.5px;color:#a1a1aa">Positions</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;color:#a1a1aa"><svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></div><span style="font-size:9.5px;color:#a1a1aa">More</span></div>
+            </div>
+            <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:108px;height:4px;border-radius:3px;background:#52525b"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== More sheet ===== -->
+      <div style="flex:none;width:360px">
+        <div style="font:600 11px/1 ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:#6E6470;margin-bottom:11px">More — bottom sheet</div>
+        <div style="width:360px;background:#000;border-radius:42px;padding:8px;box-shadow:0 18px 50px rgba(46,38,48,.28)">
+          <div style="position:relative;width:344px;height:790px;background:#18181b;border-radius:35px;overflow:hidden;color:#fafafa">
+            <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:#000;z-index:30"></div>
+            <!-- faint underlying screen -->
+            <div style="height:38px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;color:#fafafa">
+              <span style="font-size:13px;font-weight:600">9:41</span>
+              <div style="display:flex;align-items:center;gap:6px">
+                <svg width="15" height="11" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+                <svg width="15" height="11" viewBox="0 0 17 12" fill="currentColor"><path d="M8.5 2.2C5.3 2.2 2.4 3.4.3 5.4L1.9 7C3.6 5.4 5.9 4.4 8.5 4.4s4.9 1 6.6 2.6L16.7 5.4C14.6 3.4 11.7 2.2 8.5 2.2z"/><path d="M8.5 6.7c-1.5 0-2.9.6-3.9 1.6l3.9 3.9 3.9-3.9c-1-1-2.4-1.6-3.9-1.6z"/></svg>
+                <svg width="24" height="11" viewBox="0 0 26 12" fill="none"><rect x="0.5" y="0.5" width="22" height="11" rx="3" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.5" fill="currentColor"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".4"/></svg>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:9px;padding:8px 16px 8px;opacity:.5">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#8B5FBF,#4B1F63);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px">A</div>
+              <span style="font-size:16px;font-weight:600">ALumiEye</span>
+            </div>
+            <div style="padding:4px 16px;opacity:.5"><h1 style="margin:0;font-size:21px;font-weight:700;letter-spacing:-.01em">Welcome, Minh</h1></div>
+            <!-- scrim -->
+            <div style="position:absolute;inset:0;background:rgba(8,8,10,.62)"></div>
+            <!-- bottom sheet -->
+            <div style="position:absolute;left:0;right:0;bottom:0;background:#1e1e21;border-top:1px solid #3f3f46;border-radius:26px 26px 0 0;padding:10px 16px 22px;box-shadow:0 -10px 40px rgba(0,0,0,.4)">
+              <div style="width:40px;height:4px;border-radius:3px;background:#52525b;margin:2px auto 14px"></div>
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+                <p style="margin:0;font-size:17px;font-weight:700">More</p>
+                <div style="width:30px;height:30px;border-radius:50%;background:#27272a;display:flex;align-items:center;justify-content:center;color:#a1a1aa"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:14px"><div style="width:34px;height:34px;border-radius:10px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4;margin-bottom:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.9 5.9 6.5.9-4.7 4.6 1.1 6.5L12 18.8 6.2 21.8l1.1-6.5L2.6 9.8l6.5-.9z"/></svg></div><p style="margin:0;font-size:14px;font-weight:600">Watchlist</p><p style="margin:2px 0 0;font-size:11px;color:#a1a1aa">12 tickers tracked</p></div>
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:14px"><div style="width:34px;height:34px;border-radius:10px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4;margin-bottom:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div><p style="margin:0;font-size:14px;font-weight:600">Portfolio</p><p style="margin:2px 0 0;font-size:11px;color:#a1a1aa">Allocation &amp; holdings</p></div>
+                <div style="background:#27272a;border:1px solid #3f3f46;border-radius:14px;padding:14px"><div style="width:34px;height:34px;border-radius:10px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4;margin-bottom:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M8 17v-5"/><path d="M13 17V9"/><path d="M18 17v-2"/></svg></div><p style="margin:0;font-size:14px;font-weight:600">Analytics</p><p style="margin:2px 0 0;font-size:11px;color:#a1a1aa">Performance &amp; risk</p></div>
+                <div style="position:relative;background:#27272a;border:1px solid rgba(139,95,191,.4);border-radius:14px;padding:14px"><div style="position:absolute;top:11px;right:11px;display:flex;align-items:center;gap:4px;background:rgba(139,95,191,.22);color:#b794d4;font-size:9.5px;font-weight:600;padding:3px 7px;border-radius:999px"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Premium</div><div style="width:34px;height:34px;border-radius:10px;background:rgba(139,95,191,.18);display:flex;align-items:center;justify-content:center;color:#b794d4;margin-bottom:10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.99.1 3 3 0 0 0-2 5.16A3 3 0 0 0 6 16a3 3 0 0 0 6 .5 3 3 0 0 0 6-.5 3 3 0 0 0 1.99-5.74 3 3 0 0 0-2-5.16A3 3 0 0 0 12 5Z"/><path d="M12 5v14"/></svg></div><p style="margin:0;font-size:14px;font-weight:600">AI Analysis</p><p style="margin:2px 0 0;font-size:11px;color:#a1a1aa">Insights &amp; forecasts</p></div>
+              </div>
+              <div style="height:1px;background:#3f3f46;margin:14px 0"></div>
+              <div style="display:flex;flex-direction:column;gap:2px">
+                <div style="display:flex;align-items:center;gap:13px;padding:9px 4px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg><span style="font-size:14px;font-weight:500;color:#fafafa">Settings</span></div>
+                <div style="display:flex;align-items:center;gap:13px;padding:9px 4px"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg><span style="font-size:14px;font-weight:500;color:#fafafa">Help &amp; support</span></div>
+              </div>
+            </div>
+            <!-- 5-slot bottom bar : More active -->
+            <div style="position:absolute;bottom:0;left:0;right:0;height:74px;background:#1e1e21;border-top:1px solid #3f3f46;display:flex;align-items:center;padding:0 4px;z-index:5">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;color:#71717a"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><span style="font-size:9.5px;color:#71717a">Dashboard</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;color:#71717a"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21v-5"/><path d="M11 21V9"/><path d="M16 21v-9"/></svg></div><span style="font-size:9.5px;color:#71717a">Market</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;color:#71717a"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><span style="font-size:9.5px;color:#71717a">Signals</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;color:#71717a"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><span style="font-size:9.5px;color:#71717a">Positions</span></div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px"><div style="padding:4px 14px;border-radius:999px;background:rgba(139,95,191,.22);color:#b794d4"><svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></div><span style="font-size:9.5px;font-weight:600;color:#b794d4">More</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
