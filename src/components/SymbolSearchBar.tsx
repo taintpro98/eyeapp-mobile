@@ -1,6 +1,8 @@
-import { View, TextInput, StyleSheet, ViewStyle } from "react-native";
+import { View, Text, TextInput, StyleSheet, Pressable, ViewStyle } from "react-native";
 import { Search } from "lucide-react-native";
+import { useTranslation } from "react-i18next";
 import { useThemeColors } from "@/theme/useTheme";
+import { typography } from "@/theme/tokens";
 
 type Props = {
   value: string;
@@ -12,6 +14,7 @@ type Props = {
 
 export function SymbolSearchBar({ value, onChangeText, onSubmit, placeholder = "Filter by symbol", style }: Props) {
   const c = useThemeColors();
+  const { t } = useTranslation();
 
   return (
     <View style={[styles.container, { backgroundColor: c.card, borderColor: c.cardBorder }, style]}>
@@ -27,6 +30,14 @@ export function SymbolSearchBar({ value, onChangeText, onSubmit, placeholder = "
         returnKeyType="search"
         onSubmitEditing={onSubmit}
       />
+      <Pressable
+        onPress={onSubmit}
+        style={[styles.findBtn, { backgroundColor: c.brand }]}
+      >
+        <Text style={[styles.findText, { fontFamily: typography.familySemiBold }]}>
+          {t("common.find")}
+        </Text>
+      </Pressable>
     </View>
   );
 }
@@ -36,10 +47,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 9,
-    height: 42,
+    height: 44,
     borderWidth: 1,
-    borderRadius: 11,
-    paddingHorizontal: 13,
+    borderRadius: 12,
+    paddingLeft: 13,
+    paddingRight: 4,
   },
   input: { flex: 1, fontSize: 13, padding: 0 },
+  findBtn: {
+    paddingHorizontal: 16,
+    paddingVertical: 7,
+    borderRadius: 9,
+  },
+  findText: { color: "#fff", fontSize: 13 },
 });

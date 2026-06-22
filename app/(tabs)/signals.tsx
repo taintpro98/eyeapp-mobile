@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   View,
   Text,
@@ -16,24 +17,20 @@ import { AppHeader } from "@/components/AppHeader";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
 import { SymbolSearchBar } from "@/components/SymbolSearchBar";
 import { useSignals } from "@/hooks/useSignals";
+import { useAccessibleMarketIds } from "@/hooks/useMarkets";
 import { AccessDeniedState } from "@/components/AccessDeniedState";
 import { isAccessDenied } from "@/utils/apiErrors";
+import { timeAgo } from "@/utils/timeAgo";
 import type { Signal } from "@/api/signals";
 
 function formatNumber(n: number): string {
   return n.toLocaleString("en-US", { maximumFractionDigits: 0 });
 }
 
-function timeAgo(ts: number): string {
-  const diff = Math.floor(Date.now() / 1000 - ts);
-  if (diff < 60) return "now";
-  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-  if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-  return `${Math.floor(diff / 86400)}d ago`;
-}
-
 export default function SignalsScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
+  const accessibleMarkets = useAccessibleMarketIds();
   const [marketId, setMarketId] = useState<1 | 2>(2);
   const [input, setInput] = useState("");
   const [symbolFilter, setSymbolFilter] = useState("");
@@ -62,8 +59,8 @@ export default function SignalsScreen() {
     const isBuy = item.side === "buy";
     const borderColor = isBuy ? c.positive : c.negative;
     const sideBadge = isBuy
-      ? { bg: c.buyBg, text: c.buyText, label: "BUY" }
-      : { bg: c.sellBg, text: c.sellText, label: "SELL" };
+      ? { bg: c.buyBg, text: c.buyText, label: t("ordersEnum.side.buy") }
+      : { bg: c.sellBg, text: c.sellText, label: t("ordersEnum.side.sell") };
 
     return (
       <View
@@ -93,7 +90,7 @@ export default function SignalsScreen() {
         </View>
         <View style={styles.signalGrid}>
           <View>
-            <Text style={[styles.gridLabel, { color: c.textFaint }]}>QTY</Text>
+            <Text style={[styles.gridLabel, { color: c.textFaint }]}>{t("signals.columns.qty")}</Text>
             <Text
               style={[styles.gridValue, { color: "#3b82f6", fontWeight: "600" }]}
             >
@@ -101,15 +98,15 @@ export default function SignalsScreen() {
             </Text>
           </View>
           <View>
-            <Text style={[styles.gridLabel, { color: c.textFaint }]}>PRICE</Text>
+            <Text style={[styles.gridLabel, { color: c.textFaint }]}>{t("signals.columns.price")}</Text>
             <Text style={[styles.gridValue, { color: c.textPrimary }]}>
               {formatNumber(item.price)}
             </Text>
           </View>
           <View>
-            <Text style={[styles.gridLabel, { color: c.textFaint }]}>TIME</Text>
+            <Text style={[styles.gridLabel, { color: c.textFaint }]}>{t("signals.columns.time")}</Text>
             <Text style={[styles.gridValue, { color: c.textMuted }]}>
-              {timeAgo(item.timestamp)}
+              {timeAgo(item.timestamp, t)}
             </Text>
           </View>
         </View>
@@ -128,7 +125,7 @@ export default function SignalsScreen() {
               { color: c.textPrimary, fontFamily: typography.familyBold },
             ]}
           >
-            Trading signals
+            {t("signals.title")}
           </Text>
           <Pressable style={styles.refreshBtn} onPress={applyFilter}>
             <RefreshCw size={18} color={c.textMuted} />
@@ -137,8 +134,8 @@ export default function SignalsScreen() {
         <View style={styles.toggleRow}>
           <SegmentedToggle
             options={[
-              { label: "Stocks", value: 2 },
-              { label: "Crypto", value: 1 },
+              { label: t("market.stocks"), value: 2, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(2) },
+              { label: t("market.crypto"), value: 1, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(1) },
             ]}
             selected={marketId}
             onSelect={(v) => setMarketId(v as 1 | 2)}
@@ -154,8 +151,8 @@ export default function SignalsScreen() {
 
       {isAccessDenied(error) ? (
         <AccessDeniedState
-          title="Signals bị khóa"
-          hint="Nâng cấp gói của bạn để xem tín hiệu giao dịch trên thị trường này."
+          title={t("signals.accessDenied")}
+          hint={t("signals.accessDeniedHint")}
         />
       ) : isLoading ? (
         <View style={styles.centered}>
@@ -191,7 +188,7 @@ export default function SignalsScreen() {
                   {(error as any).message ?? "Failed to load signals"}
                 </Text>
               ) : (
-                <Text style={{ color: c.textMuted }}>No signals found</Text>
+                <Text style={{ color: c.textMuted }}>{t("signals.noSignals")}</Text>
               )}
             </View>
           }
@@ -203,7 +200,7 @@ export default function SignalsScreen() {
 
 const styles = StyleSheet.create({
   safe: { flex: 1 },
-  headerSection: { paddingHorizontal: 18, paddingBottom: 12 },
+  headerSection: { paddingHorizontal: 14, paddingBottom: 12 },
   titleRow: {
     flexDirection: "row",
     alignItems: "center",
@@ -232,7 +229,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 13,
   },
   searchInput: { flex: 1, fontSize: 13, padding: 0 },
-  list: { padding: 18, paddingTop: 0 },
+  list: { padding: 14, paddingTop: 0 },
   centered: { flex: 1, alignItems: "center", justifyContent: "center", paddingTop: 40 },
   signalCard: {
     borderWidth: 1,

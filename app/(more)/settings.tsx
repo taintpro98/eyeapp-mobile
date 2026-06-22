@@ -9,6 +9,7 @@ import { useThemeStore, type ThemePreference } from "@/store/themeStore";
 import { setLanguage } from "@/i18n";
 import i18n from "@/i18n";
 import { useAuthStore } from "@/store/authStore";
+import { logout as apiLogout } from "@/api/auth";
 import { useState } from "react";
 
 export default function SettingsScreen() {
@@ -16,7 +17,8 @@ export default function SettingsScreen() {
   const c = useThemeColors();
   const router = useRouter();
   const { preference, setPreference } = useThemeStore();
-  const logout = useAuthStore((s) => s.logout);
+  const clearAuth = useAuthStore((s) => s.clearAuth);
+  const refreshToken = useAuthStore((s) => s.refreshToken);
   const [currentLang, setCurrentLang] = useState(i18n.language as "en" | "vi");
 
   async function handleLanguage(lang: "en" | "vi") {
@@ -26,6 +28,11 @@ export default function SettingsScreen() {
 
   async function handleTheme(pref: ThemePreference) {
     await setPreference(pref);
+  }
+
+  async function handleLogout() {
+    try { await apiLogout(refreshToken ?? undefined); } catch {}
+    await clearAuth();
   }
 
   const themeOptions: { value: ThemePreference; labelKey: string; Icon: typeof Sun }[] = [
@@ -100,7 +107,7 @@ export default function SettingsScreen() {
         {/* Sign out */}
         <Pressable
           style={[styles.signOutBtn, { backgroundColor: c.card, borderColor: c.cardBorder }]}
-          onPress={() => logout()}
+          onPress={handleLogout}
         >
           <Text style={[styles.signOutText, { color: c.negative, fontFamily: typography.familySemiBold }]}>
             {t("settings.signOut")}

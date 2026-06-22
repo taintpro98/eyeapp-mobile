@@ -7,20 +7,27 @@ import {
   ActivityIndicator,
   RefreshControl,
 } from "react-native";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ChevronLeft } from "lucide-react-native";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 import { useWatchlist } from "@/hooks/useWatchlist";
+import { useAccessibleMarketIds } from "@/hooks/useMarkets";
 import { AccessDeniedState } from "@/components/AccessDeniedState";
+import { SegmentedToggle } from "@/components/SegmentedToggle";
 import { isAccessDenied } from "@/utils/apiErrors";
 import type { WatchlistItem } from "@/api/watchlist";
 
 export default function WatchlistScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
   const router = useRouter();
-  const { data, isLoading, error, refetch, isRefetching } = useWatchlist(1);
+  const accessibleMarkets = useAccessibleMarketIds();
+  const [marketId, setMarketId] = useState<1 | 2>(2);
+  const { data, isLoading, error, refetch, isRefetching } = useWatchlist(marketId);
 
   const renderItem = ({ item, index }: { item: WatchlistItem; index: number }) => (
     <View>
@@ -65,13 +72,23 @@ export default function WatchlistScreen() {
             { color: c.textPrimary, fontFamily: typography.familyBold },
           ]}
         >
-          Watchlist
+          {t("watchlist.title")}
         </Text>
+      </View>
+      <View style={styles.toggleRow}>
+        <SegmentedToggle
+          options={[
+            { label: t("market.stocks"), value: 2, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(2) },
+            { label: t("market.crypto"), value: 1, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(1) },
+          ]}
+          selected={marketId}
+          onSelect={(v) => setMarketId(v as 1 | 2)}
+        />
       </View>
       {isAccessDenied(error) ? (
         <AccessDeniedState
-          title="Watchlist bị khóa"
-          hint="Nâng cấp gói của bạn để theo dõi tài sản trên thị trường này."
+          title={t("watchlist.accessDenied")}
+          hint={t("watchlist.accessDeniedHint")}
         />
       ) : isLoading ? (
         <View style={styles.centered}>
@@ -88,7 +105,7 @@ export default function WatchlistScreen() {
           }
           ListEmptyComponent={
             <View style={styles.centered}>
-              <Text style={{ color: c.textMuted }}>No items in watchlist</Text>
+              <Text style={{ color: c.textMuted }}>{t("watchlist.empty")}</Text>
             </View>
           }
         />
@@ -114,6 +131,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: { fontSize: 20, fontWeight: "700", letterSpacing: -0.2 },
+  toggleRow: { paddingHorizontal: 14, paddingBottom: 6, alignSelf: "flex-start" },
   list: { padding: 18 },
   centered: { flex: 1, alignItems: "center", justifyContent: "center", paddingTop: 40 },
   row: {

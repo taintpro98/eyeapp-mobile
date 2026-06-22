@@ -15,6 +15,7 @@ import { ChevronLeft, RefreshCw } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
+import { timeAgo } from "@/utils/timeAgo";
 import { usePositionDetail, usePositionLive } from "@/hooks/usePositions";
 import type { PositionOrder, PositionStatus } from "@/api/positions";
 
@@ -49,20 +50,6 @@ function fmtSigned(n: number, suffix = "%"): string {
   return `${n > 0 ? "+" : ""}${n.toFixed(4)}${suffix}`;
 }
 
-function fmtTimestamp(ts: number, days: string[]): string {
-  const d = new Date(ts * 1000);
-  const now = new Date();
-  const diffDays = Math.floor((now.getTime() - d.getTime()) / 86400000);
-  const hhmm = d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
-  if (diffDays < 7) {
-    return `${days[d.getDay()]} ${hhmm}`;
-  }
-  const dd = String(d.getDate()).padStart(2, "0");
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  const yyyy = d.getFullYear();
-  return `${dd}/${mm}/${yyyy} ${hhmm}`;
-}
-
 function getStatusStyle(status: PositionStatus, c: ReturnType<typeof useThemeColors>) {
   switch (status) {
     case "running": return { bg: c.statusRunningBg, text: c.statusRunningText };
@@ -86,8 +73,6 @@ export default function PositionDetailScreen() {
   const { data: detail, isLoading, refetch, isRefetching } = usePositionDetail(mId, pId);
   const { data: live } = usePositionLive(mId, pId);
   const spin = useSpinAnimation(isRefetching);
-
-  const days: string[] = t("common.time.days", { returnObjects: true }) as string[];
 
   if (isLoading) {
     return (
@@ -166,7 +151,7 @@ export default function PositionDetailScreen() {
             </Badge>
           </View>
           <Text style={[styles.metaText, { color: c.textMuted }]}>
-            ID #{detail.id} · {fmtTimestamp(detail.timestamp, days)}
+            ID #{detail.id} · {timeAgo(detail.timestamp, t)}
           </Text>
 
           {/* LIVE sub-card */}
@@ -250,7 +235,7 @@ export default function PositionDetailScreen() {
           ) : (
             <View style={styles.orderList}>
               {detail.orders.map((order, idx) => (
-                <OrderCard key={order.id} order={order} idx={idx} days={days} c={c} t={t} />
+                <OrderCard key={order.id} order={order} idx={idx} c={c} />
               ))}
             </View>
           )}
@@ -305,12 +290,12 @@ function StatCell({
 }
 
 function OrderCard({
-  order, idx, days, c, t,
+  order, idx, c,
 }: {
-  order: PositionOrder; idx: number; days: string[];
+  order: PositionOrder; idx: number;
   c: ReturnType<typeof useThemeColors>;
-  t: (key: string) => string;
 }) {
+  const { t } = useTranslation();
   const isBuy = order.side === "buy";
   const orderPnlColor = order.order_pnl === 0 ? c.textMuted : order.order_pnl > 0 ? c.positive : c.negative;
   const posPnlColor = order.position_pnl === 0 ? c.textMuted : order.position_pnl > 0 ? c.positive : c.negative;
@@ -324,7 +309,7 @@ function OrderCard({
             {idx + 1}.
           </Text>
           <Text style={[styles.orderTime, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
-            {fmtTimestamp(order.timestamp, days)}
+            {timeAgo(order.timestamp, t)}
           </Text>
         </View>
         <View style={[styles.badge, { backgroundColor: isBuy ? c.buyBg : c.sellBg }]}>

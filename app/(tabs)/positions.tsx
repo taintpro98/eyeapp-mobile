@@ -1,8 +1,10 @@
 import { useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import {
   View,
   Text,
   FlatList,
+  ScrollView,
   StyleSheet,
   Pressable,
   ActivityIndicator,
@@ -10,7 +12,7 @@ import {
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ChevronLeft, RefreshCw } from "lucide-react-native";
+import { ChevronLeft } from "lucide-react-native";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 import { FilterChips } from "@/components/FilterChips";
@@ -19,25 +21,29 @@ import { PositionCard } from "@/components/PositionCard";
 import { SymbolSearchBar } from "@/components/SymbolSearchBar";
 import { AccessDeniedState } from "@/components/AccessDeniedState";
 import { usePositions } from "@/hooks/usePositions";
+import { useAccessibleMarketIds } from "@/hooks/useMarkets";
 import { isAccessDenied } from "@/utils/apiErrors";
 import { fetchPositionLive } from "@/api/positions";
 import { useAuthStore } from "@/store/authStore";
 import type { Position, PositionStatus } from "@/api/positions";
 
-const STATUS_FILTERS = [
-  { label: "All", value: "all" as const },
-  { label: "Running", value: "running" as const },
-  { label: "Opened", value: "opened" as const },
-  { label: "Closing", value: "closing" as const },
-  { label: "Closed", value: "closed" as const },
-];
-
 type FilterValue = "all" | PositionStatus;
 
 export default function PositionsScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
   const router = useRouter();
   const accessToken = useAuthStore((s) => s.accessToken);
+  const accessibleMarkets = useAccessibleMarketIds();
+
+  const STATUS_FILTERS = [
+    { label: t("positions.filters.all"), value: "all" as const },
+    { label: t("positions.filters.running"), value: "running" as const },
+    { label: t("positions.filters.opened"), value: "opened" as const },
+    { label: t("positions.filters.closing"), value: "closing" as const },
+    { label: t("positions.filters.closed"), value: "closed" as const },
+  ];
+
   const [marketId, setMarketId] = useState<1 | 2>(2);
   const [filter, setFilter] = useState<FilterValue>("all");
   const [activeOnly, setActiveOnly] = useState(true);
@@ -92,17 +98,14 @@ export default function PositionsScreen() {
           Positions
         </Text>
         <View style={{ flex: 1 }} />
-        <Pressable style={styles.headerBtn} onPress={applyFilter}>
-          <RefreshCw size={18} color={c.textMuted} />
-        </Pressable>
       </View>
 
       {/* Market toggle */}
       <View style={styles.toggleRow}>
         <SegmentedToggle
           options={[
-            { label: "Stocks", value: 2 },
-            { label: "Crypto", value: 1 },
+            { label: t("market.stocks"), value: 2, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(2) },
+            { label: t("market.crypto"), value: 1, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(1) },
           ]}
           selected={marketId}
           onSelect={(v) => setMarketId(v as 1 | 2)}
@@ -111,11 +114,13 @@ export default function PositionsScreen() {
 
       {/* Filters */}
       <View style={styles.filterRow}>
-        <FilterChips
-          options={STATUS_FILTERS}
-          selected={filter}
-          onSelect={setFilter}
-        />
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flex: 1 }}>
+          <FilterChips
+            options={STATUS_FILTERS}
+            selected={filter}
+            onSelect={setFilter}
+          />
+        </ScrollView>
         <View style={[styles.dividerVert, { borderLeftColor: c.cardBorder }]}>
           <Pressable
             style={styles.checkboxRow}
@@ -134,7 +139,7 @@ export default function PositionsScreen() {
               )}
             </View>
             <Text style={[styles.checkboxLabel, { color: c.textMuted }]}>
-              Active
+              {t("positions.filters.active")}
             </Text>
           </Pressable>
         </View>
@@ -260,8 +265,6 @@ const styles = StyleSheet.create({
   toggleRow: {
     paddingHorizontal: 14,
     paddingBottom: 6,
-    alignSelf: "flex-start",
-    marginLeft: 14,
   },
   list: {
     padding: 14,

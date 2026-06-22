@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   View,
   Text,
@@ -11,6 +12,7 @@ import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 import { AppHeader } from "@/components/AppHeader";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
+import { useAccessibleMarketIds } from "@/hooks/useMarkets";
 import { useSignals } from "@/hooks/useSignals";
 
 const MOCK_SENTIMENT = [
@@ -28,8 +30,10 @@ const MOCK_TICKERS = [
 ];
 
 export default function MarketScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
   const [marketId, setMarketId] = useState<1 | 2>(2);
+  const accessibleMarkets = useAccessibleMarketIds();
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: c.surface }]}>
@@ -44,16 +48,16 @@ export default function MarketScreen() {
                 { color: c.textPrimary, fontFamily: typography.familyBold },
               ]}
             >
-              Market
+              {t("market.title")}
             </Text>
             <Text style={[styles.subtitle, { color: c.textMuted }]}>
-              Vietnam equities · HOSE
+              {t("market.subtitle")}
             </Text>
           </View>
           <SegmentedToggle
             options={[
-              { label: "Stocks", value: 2 },
-              { label: "Crypto", value: 1 },
+              { label: t("market.stocks"), value: 2, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(2) },
+              { label: t("market.crypto"), value: 1, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(1) },
             ]}
             selected={marketId}
             onSelect={(v) => setMarketId(v as 1 | 2)}
@@ -78,10 +82,10 @@ export default function MarketScreen() {
           <Text
             style={[styles.cardTitle, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}
           >
-            Top movers
+            {t("market.topMovers")}
           </Text>
           <Text style={[styles.cardSub, { color: c.textMuted }]}>
-            Most active by turnover
+            {t("market.topMoversSubtitle")}
           </Text>
           <View style={{ marginTop: 12, gap: 9 }}>
             {MOCK_TICKERS.map((t, i) => (
@@ -137,14 +141,14 @@ export default function MarketScreen() {
           <Text
             style={[styles.cardTitle, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}
           >
-            Market sentiment
+            {t("market.sentiment")}
           </Text>
           <View style={{ marginTop: 13, gap: 11 }}>
             {MOCK_SENTIMENT.map((s) => (
               <View key={s.label}>
                 <View style={styles.sentimentHeader}>
                   <Text style={[styles.sentimentLabel, { color: c.textMuted }]}>
-                    {s.label}
+                    {t(`market.sentiment${s.label}`)}
                   </Text>
                   <Text
                     style={[

@@ -3,8 +3,14 @@
     "loading": "Loading...",
     "refresh": "Refresh",
     "apply": "Apply",
+    "find": "Find",
     "time": {
-      "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+      "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      "justNow": "Just now",
+      "minutesAgo": "{{count}}m ago",
+      "hoursAgo": "{{count}}h ago",
+      "yesterday": "Yesterday {{time}}",
+      "thisWeek": "{{day}} {{time}}"
     }
   },
   "nav": {
@@ -49,38 +55,85 @@
     "manageBilling": "Manage billing",
     "signOut": "Sign out"
   },
+  "dashboard": {
+    "welcome": "Welcome, {{name}}",
+    "subtitle": "Your markets at a glance",
+    "recentSignals": "Recent signals",
+    "recentSignalsSubtitle": "Latest moves on your markets",
+    "confidence": {
+      "strong": "Strong",
+      "moderate": "Moderate"
+    },
+    "viewAllSignals": "View all signals",
+    "unlockPremium": "Unlock Premium",
+    "unlockPremiumDesc": "Advanced analytics, crypto markets and AI insights.",
+    "noSignals": "No recent signals"
+  },
   "portfolio": {
     "title": "Portfolio",
     "subtitle": "Track your holdings and performance",
     "allocation": "Allocation",
     "totalValue": "Total Value",
     "cash": "Cash",
-    "positions": "Positions"
+    "positions": "Positions",
+    "details": "PORTFOLIO DETAILS",
+    "entryPrice": "Entry",
+    "currentPrice": "Current",
+    "pnl": "P&L",
+    "noData": "No portfolio data"
   },
   "signals": {
     "title": "Trading signals",
     "noSignals": "No signals found.",
     "accessDenied": "Upgrade required to view signals",
-    "accessDeniedHint": "Your current plan does not include signals. Upgrade to access."
+    "accessDeniedHint": "Your current plan does not include signals. Upgrade to access.",
+    "symbol": "Signals — {{symbol}}",
+    "columns": {
+      "qty": "QTY",
+      "price": "PRICE",
+      "time": "TIME"
+    }
   },
   "market": {
     "title": "Market Overview",
     "stocks": "Stocks",
-    "crypto": "Crypto"
+    "crypto": "Crypto",
+    "subtitle": "Vietnam equities · HOSE",
+    "topMovers": "Top movers",
+    "topMoversSubtitle": "Most active by turnover",
+    "sentiment": "Market sentiment",
+    "sentimentBullish": "Bullish",
+    "sentimentNeutral": "Neutral",
+    "sentimentBearish": "Bearish"
   },
   "watchlist": {
     "title": "Watchlist",
     "accessDenied": "Watchlist Unavailable",
-    "accessDeniedHint": "Your current plan does not include watchlist access for this market."
+    "accessDeniedHint": "Your current plan does not include watchlist access for this market.",
+    "empty": "No items in watchlist"
   },
   "positions": {
     "title": "Positions",
     "noPositions": "No positions found.",
     "accessDenied": "Upgrade required to view positions",
     "accessDeniedHint": "Your current plan does not include positions. Upgrade to access.",
+    "filters": {
+      "all": "All",
+      "running": "Running",
+      "opened": "Opened",
+      "closing": "Closing",
+      "closed": "Closed",
+      "active": "Active"
+    },
     "columns": {
       "avgPrice": "Avg Price",
-      "capacity": "Capacity"
+      "stopLoss": "Stop Loss",
+      "capacity": "Capacity",
+      "size": "Size",
+      "curPrice": "Cur. Price",
+      "unrealizedPnl": "Unr. P&L",
+      "pnl": "P&L",
+      "distToSL": "Dist. to SL"
     },
     "detail": {
       "orders": "Order History",
@@ -109,6 +162,14 @@
         "positionPnl": "Position P&L"
       }
     }
+  },
+  "analytics": {
+    "openPositions": "Open positions — {{symbol}}",
+    "noOpenPositions": "No open positions.",
+    "signal": "SIGNAL",
+    "strength": "STRENGTH",
+    "rating": "Rating",
+    "livePrice": "Live price"
   },
   "positionsEnum": {
     "side": {
@@ -141,7 +202,22 @@
     "emptyState": "Search for an asset to begin analysis",
     "trendAnalysis": "Trend Analysis",
     "shortTerm": "Short Term",
-    "midTerm": "Mid Term"
+    "midTerm": "Mid Term",
+    "trend": {
+      "uptrend": "Up",
+      "downtrend": "Down",
+      "sideways": "Sideways"
+    },
+    "signal": {
+      "bullish": "Bullish",
+      "bearish": "Bearish",
+      "neutral": "Neutral"
+    },
+    "strength": {
+      "strong": "Strong",
+      "moderate": "Moderate",
+      "weak": "Weak"
+    }
   },
   "auth": {
     "signIn": "Sign in",

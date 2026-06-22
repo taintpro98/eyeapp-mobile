@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { View, Text, ScrollView, StyleSheet, Pressable } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -7,8 +8,10 @@ import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 import { AppHeader } from "@/components/AppHeader";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
+import { useAccessibleMarketIds } from "@/hooks/useMarkets";
 import { useAuthStore } from "@/store/authStore";
 import { useSignals } from "@/hooks/useSignals";
+import { timeAgo } from "@/utils/timeAgo";
 
 type KpiItem = {
   label: string;
@@ -27,19 +30,13 @@ const MOCK_KPIS: KpiItem[] = [
   { label: "Net Foreign", value: "+312.4", suffix: " B", change: "Buy – sell, today", positive: true, icon: "trend" },
 ];
 
-function timeAgo(ts: number): string {
-  const diff = Math.floor(Date.now() / 1000 - ts);
-  if (diff < 60) return "now";
-  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-  if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-  return `${Math.floor(diff / 86400)}d ago`;
-}
-
 export default function DashboardScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
   const router = useRouter();
   const user = useAuthStore((s) => s.user);
   const [marketId, setMarketId] = useState<1 | 2>(2);
+  const accessibleMarkets = useAccessibleMarketIds();
   const { data: signalsData } = useSignals({ market_id: marketId });
 
   const displayName = user?.display_name?.split(" ")[0] ?? "User";
@@ -57,16 +54,16 @@ export default function DashboardScreen() {
                 { color: c.textPrimary, fontFamily: typography.familyBold },
               ]}
             >
-              Welcome, {displayName}
+              {t("dashboard.welcome", { name: displayName })}
             </Text>
             <Text style={[styles.subtitle, { color: c.textMuted }]}>
-              Your markets at a glance
+              {t("dashboard.subtitle")}
             </Text>
           </View>
           <SegmentedToggle
             options={[
-              { label: "Stocks", value: 2 },
-              { label: "Crypto", value: 1 },
+              { label: t("market.stocks"), value: 2, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(2) },
+              { label: t("market.crypto"), value: 1, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(1) },
             ]}
             selected={marketId}
             onSelect={(v) => setMarketId(v as 1 | 2)}
@@ -152,10 +149,10 @@ export default function DashboardScreen() {
               { color: c.textPrimary, fontFamily: typography.familySemiBold },
             ]}
           >
-            Recent signals
+            {t("dashboard.recentSignals")}
           </Text>
           <Text style={[styles.cardSub, { color: c.textMuted }]}>
-            Latest moves on your markets
+            {t("dashboard.recentSignalsSubtitle")}
           </Text>
           <View style={{ gap: 8, marginTop: 12 }}>
             {(signalsData?.pages?.[0]?.items ?? []).slice(0, 3).map((sig) => (
@@ -177,12 +174,12 @@ export default function DashboardScreen() {
                       {sig.symbol}
                     </Text>
                     <Text style={[styles.signalMeta, { color: c.textMuted }]}>
-                      {sig.side === "buy" ? "Buy" : "Sell"} · {sig.confidence > 0.7 ? "Strong" : "Moderate"}
+                      {t(`ordersEnum.side.${sig.side}`)} · {sig.confidence > 0.7 ? t("dashboard.confidence.strong") : t("dashboard.confidence.moderate")}
                     </Text>
                   </View>
                 </View>
                 <Text style={[styles.signalTime, { color: c.textMuted }]}>
-                  {timeAgo(sig.timestamp)}
+                  {timeAgo(sig.timestamp, t)}
                 </Text>
               </View>
             ))}
@@ -192,7 +189,7 @@ export default function DashboardScreen() {
             onPress={() => router.push("/(tabs)/signals")}
           >
             <Text style={[styles.viewAllText, { color: c.brand }]}>
-              View all signals
+              {t("dashboard.viewAllSignals")}
             </Text>
             <ArrowRight size={15} color={c.brand} />
           </Pressable>
@@ -211,13 +208,13 @@ export default function DashboardScreen() {
               { color: c.textPrimary, fontFamily: typography.familySemiBold },
             ]}
           >
-            Unlock Premium
+            {t("dashboard.unlockPremium")}
           </Text>
           <Text style={[styles.cardSub, { color: c.textMuted, marginBottom: 12 }]}>
-            Advanced analytics, crypto markets and AI insights.
+            {t("dashboard.unlockPremiumDesc")}
           </Text>
           <View style={styles.upgradeButton}>
-            <Text style={styles.upgradeButtonText}>Upgrade now</Text>
+            <Text style={styles.upgradeButtonText}>{t("upgrade.upgradeNow")}</Text>
           </View>
         </View>
       </ScrollView>

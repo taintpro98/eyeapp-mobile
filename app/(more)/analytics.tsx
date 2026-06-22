@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import {
   View,
   Text,
@@ -22,27 +23,32 @@ import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
 import { AccessDeniedState } from "@/components/AccessDeniedState";
+import { useAccessibleMarketIds } from "@/hooks/useMarkets";
 import { useAuthStore } from "@/store/authStore";
 import { fetchAnalysis } from "@/api/analysis";
 import { fetchSignals } from "@/api/signals";
 import { fetchPositions } from "@/api/positions";
 import { isAccessDenied } from "@/utils/apiErrors";
+import { timeAgo } from "@/utils/timeAgo";
 import type { AnalysisResult, TrendData } from "@/api/analysis";
 import type { Signal } from "@/api/signals";
 import type { Position } from "@/api/positions";
 
-const SIGNALS_PAGE_SIZE = 5;
-
-function timeAgo(ts: number): string {
-  const diff = Math.floor(Date.now() / 1000 - ts);
-  if (diff < 60) return "now";
-  if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
-  if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
-  return `${Math.floor(diff / 86400)}d ago`;
-}
+const SIGNALS_PAGE_SIZE = 4;
 
 function fmt(n: number): string {
   return n.toLocaleString("en-US", { maximumFractionDigits: 4 });
+}
+
+function statusStyle(status: string, c: ReturnType<typeof useThemeColors>) {
+  switch (status) {
+    case "running":    return { bg: c.statusRunningBg,  text: c.statusRunningText };
+    case "opened":
+    case "opening":    return { bg: c.statusOpenedBg,   text: c.statusOpenedText };
+    case "closing":
+    case "cancelling": return { bg: c.statusClosingBg,  text: c.statusClosingText };
+    default:           return { bg: c.statusClosedBg,   text: c.statusClosedText };
+  }
 }
 
 function ratingColor(rating: string, positive: string, warning: string, negative: string) {
@@ -52,11 +58,13 @@ function ratingColor(rating: string, positive: string, warning: string, negative
 }
 
 export default function AnalyticsScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
   const router = useRouter();
   const accessToken = useAuthStore((s) => s.accessToken);
 
   const [marketId, setMarketId] = useState<1 | 2>(2);
+  const accessibleMarkets = useAccessibleMarketIds();
   const [input, setInput] = useState("");
   const [symbol, setSymbol] = useState<string | null>(null);
 
@@ -159,25 +167,25 @@ export default function AnalyticsScreen() {
 
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: c.surface }]}>
-      {/* Header */}
       <View style={styles.header}>
         <Pressable style={styles.backBtn} onPress={() => router.back()}>
           <ChevronLeft size={22} color={c.textPrimary} strokeWidth={2.2} />
         </Pressable>
         <Text style={[styles.title, { color: c.textPrimary, fontFamily: typography.familyBold }]}>
-          Asset Analysis
+          {t("assetAnalysis.title")}
         </Text>
       </View>
 
       <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
-        {/* Market toggle */}
         <SegmentedToggle
-          options={[{ label: "Stocks", value: 2 }, { label: "Crypto", value: 1 }]}
+          options={[
+            { label: t("market.stocks"), value: 2, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(2) },
+            { label: t("market.crypto"), value: 1, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(1) },
+          ]}
           selected={marketId}
           onSelect={(v) => { setMarketId(v as 1 | 2); setSymbol(null); setInput(""); }}
         />
 
-        {/* Search bar */}
         <View style={[styles.searchRow, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
           <Search size={16} color={c.textFaint} style={{ marginRight: 8 }} />
           <TextInput
@@ -195,7 +203,7 @@ export default function AnalyticsScreen() {
             style={[styles.searchBtn, { backgroundColor: c.brand }]}
             onPress={handleSearch}
           >
-            <Text style={styles.searchBtnText}>Tìm</Text>
+            <Text style={styles.searchBtnText}>{t("common.find")}</Text>
           </Pressable>
         </View>
 
@@ -203,7 +211,7 @@ export default function AnalyticsScreen() {
           <View style={styles.emptyState}>
             <Search size={40} color={c.textFaint} />
             <Text style={[styles.emptyText, { color: c.textMuted }]}>
-              Nhập mã chứng khoán để phân tích
+              {t("assetAnalysis.emptyState")}
             </Text>
           </View>
         ) : (
@@ -227,7 +235,7 @@ export default function AnalyticsScreen() {
                       <Text style={[styles.livePrice, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
                         {fmt(analysis.live_price)}
                       </Text>
-                      <Text style={[styles.livePriceLabel, { color: c.textFaint }]}>Live price</Text>
+                      <Text style={[styles.livePriceLabel, { color: c.textFaint }]}>{t("analytics.livePrice")}</Text>
                     </>
                   ) : null}
                 </View>
@@ -237,7 +245,7 @@ export default function AnalyticsScreen() {
             {/* Trend Analysis */}
             <View style={[styles.card, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
               <Text style={[styles.sectionTitle, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
-                Phân tích xu hướng
+                {t("assetAnalysis.trendAnalysis")}
               </Text>
               {analysisLoading ? (
                 <View style={styles.centered}>
@@ -245,13 +253,12 @@ export default function AnalyticsScreen() {
                 </View>
               ) : !analysis || analysisError ? (
                 <Text style={[styles.emptySection, { color: c.textMuted }]}>
-                  {analysisError ? "Không tìm thấy dữ liệu phân tích." : "Đang tải…"}
+                  {analysisError ? t("assetAnalysis.emptyState") : "…"}
                 </Text>
               ) : (
                 <View style={styles.trendContent}>
-                  {/* Rating */}
                   <View style={styles.ratingRow}>
-                    <Text style={[styles.ratingLabel, { color: c.textMuted }]}>Xếp hạng</Text>
+                    <Text style={[styles.ratingLabel, { color: c.textMuted }]}>{t("analytics.rating")}</Text>
                     <View style={[
                       styles.ratingBadge,
                       { backgroundColor: ratingColor(analysis.rating, "rgba(34,197,94,0.15)", "rgba(245,158,11,0.15)", "rgba(239,68,68,0.15)") }
@@ -264,10 +271,9 @@ export default function AnalyticsScreen() {
                       </Text>
                     </View>
                   </View>
-                  {/* Mid + Short term */}
                   <View style={styles.trendGrid}>
-                    <TrendCard label="Mid-term" data={analysis.mid_term} colors={c} />
-                    <TrendCard label="Short-term" data={analysis.short_term} colors={c} />
+                    <TrendCard label={t("positionsEnum.term.mid_term")} data={analysis.mid_term} colors={c} />
+                    <TrendCard label={t("positionsEnum.term.short_term")} data={analysis.short_term} colors={c} />
                   </View>
                 </View>
               )}
@@ -276,17 +282,17 @@ export default function AnalyticsScreen() {
             {/* Signals */}
             <View style={[styles.card, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
               <Text style={[styles.sectionTitle, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
-                Signals — {symbol}
+                {t("signals.symbol", { symbol })}
               </Text>
               {signalsDenied ? (
                 <AccessDeniedState
-                  title="Signals bị khóa"
-                  hint="Nâng cấp để xem tín hiệu giao dịch."
+                  title={t("signals.accessDenied")}
+                  hint={t("signals.accessDeniedHint")}
                 />
               ) : signalsLoading ? (
                 <View style={styles.centered}><ActivityIndicator color={c.brand} /></View>
               ) : signals.length === 0 ? (
-                <Text style={[styles.emptySection, { color: c.textMuted }]}>Không có signal nào.</Text>
+                <Text style={[styles.emptySection, { color: c.textMuted }]}>{t("signals.noSignals")}</Text>
               ) : (
                 <View>
                   {signals.map((sig) => (
@@ -320,17 +326,17 @@ export default function AnalyticsScreen() {
             {/* Active Positions */}
             <View style={[styles.card, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
               <Text style={[styles.sectionTitle, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
-                Vị thế đang mở — {symbol}
+                {t("analytics.openPositions", { symbol })}
               </Text>
               {positionsDenied ? (
                 <AccessDeniedState
-                  title="Positions bị khóa"
-                  hint="Nâng cấp để xem vị thế giao dịch."
+                  title={t("signals.accessDenied")}
+                  hint={t("signals.accessDeniedHint")}
                 />
               ) : positionsLoading ? (
                 <View style={styles.centered}><ActivityIndicator color={c.brand} /></View>
               ) : positions.length === 0 ? (
-                <Text style={[styles.emptySection, { color: c.textMuted }]}>Không có vị thế nào đang mở.</Text>
+                <Text style={[styles.emptySection, { color: c.textMuted }]}>{t("analytics.noOpenPositions")}</Text>
               ) : (
                 <View style={{ gap: 10 }}>
                   {positions.map((pos) => (
@@ -365,6 +371,7 @@ function TrendCard({
   data: TrendData;
   colors: ReturnType<typeof useThemeColors>;
 }) {
+  const { t } = useTranslation();
   const trendColor =
     data.trend === "uptrend" ? "#22c55e" : data.trend === "downtrend" ? "#ef4444" : c.textMuted;
   const signalColor =
@@ -373,12 +380,9 @@ function TrendCard({
   const TrendIcon =
     data.trend === "uptrend" ? TrendingUp : data.trend === "downtrend" ? TrendingDown : Minus;
 
-  const trendLabel =
-    data.trend === "uptrend" ? "Tăng" : data.trend === "downtrend" ? "Giảm" : "Đi ngang";
-  const signalLabel =
-    data.signal === "bullish" ? "Tăng giá" : data.signal === "bearish" ? "Giảm giá" : "Trung tính";
-  const strengthLabel =
-    data.strength === "strong" ? "Mạnh" : data.strength === "moderate" ? "Trung bình" : "Yếu";
+  const trendLabel = t(`assetAnalysis.trend.${data.trend}`, { defaultValue: data.trend });
+  const signalLabel = t(`assetAnalysis.signal.${data.signal}`, { defaultValue: data.signal });
+  const strengthLabel = t(`assetAnalysis.strength.${data.strength}`, { defaultValue: data.strength });
 
   return (
     <View style={[styles.trendCard, { backgroundColor: `${c.brand}08`, borderColor: c.cardBorder }]}>
@@ -389,11 +393,11 @@ function TrendCard({
       </View>
       <View style={styles.trendStats}>
         <View>
-          <Text style={[styles.statLabel, { color: c.textFaint }]}>SIGNAL</Text>
+          <Text style={[styles.statLabel, { color: c.textFaint }]}>{t("analytics.signal")}</Text>
           <Text style={[styles.statValue, { color: signalColor }]}>{signalLabel}</Text>
         </View>
         <View>
-          <Text style={[styles.statLabel, { color: c.textFaint }]}>STRENGTH</Text>
+          <Text style={[styles.statLabel, { color: c.textFaint }]}>{t("analytics.strength")}</Text>
           <Text style={[styles.statValue, { color: c.textPrimary }]}>{strengthLabel}</Text>
         </View>
       </View>
@@ -408,6 +412,7 @@ function SignalRow({
   signal: Signal;
   colors: ReturnType<typeof useThemeColors>;
 }) {
+  const { t } = useTranslation();
   const isBuy = sig.side === "buy";
   const borderColor = isBuy ? "#22c55e" : "#ef4444";
   const badgeBg = isBuy ? c.buyBg : c.sellBg;
@@ -417,12 +422,12 @@ function SignalRow({
     <View style={[styles.signalRow, { borderLeftColor: borderColor, backgroundColor: `${c.brand}06` }]}>
       <View style={styles.signalLeft}>
         <View style={[styles.badge, { backgroundColor: badgeBg }]}>
-          <Text style={[styles.badgeText, { color: badgeText }]}>{sig.side.toUpperCase()}</Text>
+          <Text style={[styles.badgeText, { color: badgeText }]}>{t(`ordersEnum.side.${sig.side}`)}</Text>
         </View>
         <Text style={[styles.signalPrice, { color: c.textPrimary }]}>{fmt(sig.price)}</Text>
         <Text style={[styles.signalQty, { color: "#3b82f6" }]}>{sig.quantity.toFixed(2)}%</Text>
       </View>
-      <Text style={[styles.signalTime, { color: c.textMuted }]}>{timeAgo(sig.timestamp)}</Text>
+      <Text style={[styles.signalTime, { color: c.textMuted }]}>{timeAgo(sig.timestamp, t)}</Text>
     </View>
   );
 }
@@ -436,9 +441,11 @@ function PositionRow({
   colors: ReturnType<typeof useThemeColors>;
   onPress: () => void;
 }) {
+  const { t } = useTranslation();
   const isBuy = p.side === "buy";
   const borderColor = isBuy ? "#22c55e" : "#ef4444";
   const capacityPct = Math.min(Math.round(p.capacity), 100);
+  const ss = statusStyle(p.status, c);
 
   return (
     <Pressable
@@ -449,30 +456,35 @@ function PositionRow({
         <View style={styles.badgeRow}>
           <View style={[styles.badge, { backgroundColor: isBuy ? c.buyBg : c.sellBg }]}>
             <Text style={[styles.badgeText, { color: isBuy ? c.buyText : c.sellText }]}>
-              {p.side.toUpperCase()}
+              {t(`positionsEnum.side.${p.side}`)}
+            </Text>
+          </View>
+          <View style={[styles.badge, { backgroundColor: ss.bg }]}>
+            <Text style={[styles.badgeText, { color: ss.text }]}>
+              {t(`positionsEnum.status.${p.status}`)}
             </Text>
           </View>
           <View style={[styles.badge, { backgroundColor: c.termBg }]}>
             <Text style={[styles.badgeText, { color: c.termText }]}>
-              {p.term === "short_term" ? "Intraday" : "Swing"}
+              {t(`positionsEnum.term.${p.term}`)}
             </Text>
           </View>
         </View>
-        <Text style={[styles.signalTime, { color: c.textMuted }]}>{timeAgo(p.timestamp)}</Text>
+        <Text style={[styles.signalTime, { color: c.textMuted }]}>{timeAgo(p.timestamp, t)}</Text>
       </View>
       <View style={styles.positionStats}>
         <View>
-          <Text style={[styles.statLabel, { color: c.textFaint }]}>AVG PRICE</Text>
+          <Text style={[styles.statLabel, { color: c.textFaint }]}>{t("positions.columns.avgPrice").toUpperCase()}</Text>
           <Text style={[styles.statValue, { color: c.textPrimary }]}>{fmt(p.avg_price)}</Text>
         </View>
         <View>
-          <Text style={[styles.statLabel, { color: c.textFaint }]}>STOP LOSS</Text>
+          <Text style={[styles.statLabel, { color: c.textFaint }]}>{t("positions.columns.stopLoss").toUpperCase()}</Text>
           <Text style={[styles.statValue, { color: p.stop_loss != null ? "#ef4444" : c.textMuted }]}>
             {p.stop_loss != null ? fmt(p.stop_loss) : "—"}
           </Text>
         </View>
         <View>
-          <Text style={[styles.statLabel, { color: c.textFaint }]}>CAPACITY</Text>
+          <Text style={[styles.statLabel, { color: c.textFaint }]}>{t("positions.columns.capacity").toUpperCase()}</Text>
           <Text style={[styles.statValue, { color: c.textPrimary }]}>{capacityPct}%</Text>
         </View>
       </View>

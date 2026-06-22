@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import {
   View,
   Text,
@@ -35,6 +36,7 @@ import Svg, { Path, G } from "react-native-svg";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 import { SegmentedToggle } from "@/components/SegmentedToggle";
+import { useAccessibleMarketIds } from "@/hooks/useMarkets";
 import { usePortfolio } from "@/hooks/usePortfolio";
 import { AccessDeniedState } from "@/components/AccessDeniedState";
 import { isAccessDenied } from "@/utils/apiErrors";
@@ -62,7 +64,8 @@ type Slice = {
 function buildSlices(
   holdings: PortfolioHolding[],
   cashWeight: number,
-  cash: number
+  cash: number,
+  cashLabel: string
 ): Slice[] {
   const slices: Slice[] = holdings.map((h, i) => ({
     key: String(h.position_id),
@@ -76,7 +79,7 @@ function buildSlices(
   }));
   slices.push({
     key: "CASH",
-    label: "Tiền mặt",
+    label: cashLabel,
     color: CASH_COLOR,
     percent: cashWeight * 100,
     avgPrice: null,
@@ -152,15 +155,17 @@ function formatNum(n: number | null): string {
 }
 
 export default function PortfolioScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
   const router = useRouter();
   const [marketId, setMarketId] = useState<1 | 2>(2);
+  const accessibleMarkets = useAccessibleMarketIds();
 
   const { data, isLoading, error, refetch, isRefetching } = usePortfolio(marketId);
   const spin = useSpinAnimation(isRefetching);
 
   const slices = data
-    ? buildSlices(data.holdings, data.cash_weight, data.cash)
+    ? buildSlices(data.holdings, data.cash_weight, data.cash, t("portfolio.cash"))
     : [];
   const visibleSlices = slices.filter((s) => s.percent > 0);
 
@@ -173,10 +178,10 @@ export default function PortfolioScreen() {
         </Pressable>
         <View style={{ flex: 1 }}>
           <Text style={[styles.pageTitle, { color: c.textPrimary, fontFamily: typography.familyBold }]}>
-            Danh mục
+            {t("portfolio.title")}
           </Text>
           <Text style={[styles.pageSubtitle, { color: c.textMuted }]}>
-            Theo dõi danh mục và hiệu suất
+            {t("portfolio.subtitle")}
           </Text>
         </View>
       </View>
@@ -184,7 +189,10 @@ export default function PortfolioScreen() {
       {/* Market toggle */}
       <View style={styles.toggleRow}>
         <SegmentedToggle
-          options={[{ label: "Cổ phiếu", value: 2 }, { label: "Crypto", value: 1 }]}
+          options={[
+            { label: t("market.stocks"), value: 2, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(2) },
+            { label: t("market.crypto"), value: 1, locked: accessibleMarkets.size > 0 && !accessibleMarkets.has(1) },
+          ]}
           selected={marketId}
           onSelect={(v) => setMarketId(v as 1 | 2)}
         />
@@ -201,7 +209,7 @@ export default function PortfolioScreen() {
         </View>
       ) : !data ? (
         <View style={styles.centered}>
-          <Text style={{ color: c.textMuted }}>Không có dữ liệu portfolio</Text>
+          <Text style={{ color: c.textMuted }}>{t("portfolio.noData")}</Text>
         </View>
       ) : (
         <ScrollView
@@ -213,13 +221,13 @@ export default function PortfolioScreen() {
           {/* KPI grid: 2-column top, full-width bottom */}
           <View style={styles.kpiGrid}>
             <View style={[styles.kpiTile, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
-              <Text style={[styles.kpiLabel, { color: c.textMuted }]}>Tổng giá trị</Text>
+              <Text style={[styles.kpiLabel, { color: c.textMuted }]}>{t("portfolio.totalValue")}</Text>
               <Text style={[styles.kpiValue, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
                 {formatNum(data.total_portfolio_value)}
               </Text>
             </View>
             <View style={[styles.kpiTile, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
-              <Text style={[styles.kpiLabel, { color: c.textMuted }]}>Tiền mặt</Text>
+              <Text style={[styles.kpiLabel, { color: c.textMuted }]}>{t("portfolio.cash")}</Text>
               <Text style={[styles.kpiValue, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
                 {formatNum(data.cash)}
                 <Text style={[styles.kpiSub, { color: c.textMuted }]}>
@@ -228,7 +236,7 @@ export default function PortfolioScreen() {
               </Text>
             </View>
             <View style={[styles.kpiTileFull, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
-              <Text style={[styles.kpiLabel, { color: c.textMuted }]}>Vị thế</Text>
+              <Text style={[styles.kpiLabel, { color: c.textMuted }]}>{t("portfolio.positions")}</Text>
               <Text style={[styles.kpiValue, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
                 {data.holdings.length}
               </Text>
@@ -239,7 +247,7 @@ export default function PortfolioScreen() {
           <View style={[styles.card, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
             <View style={styles.cardHeader}>
               <Text style={[styles.cardTitle, { color: c.textPrimary, fontFamily: typography.familySemiBold }]}>
-                Phân bổ
+                {t("portfolio.allocation")}
               </Text>
               <Pressable onPress={() => refetch()} hitSlop={8}>
                 <Animated.View style={{ transform: [{ rotate: spin }] }}>
@@ -275,7 +283,7 @@ export default function PortfolioScreen() {
           {/* Holding breakdown */}
           <View style={[styles.breakdownCard, { backgroundColor: c.card, borderColor: c.cardBorder, borderTopColor: c.brand + "40" }]}>
             <Text style={[styles.breakdownTitle, { color: c.textMuted }]}>
-              CHI TIẾT DANH MỤC
+              {t("portfolio.details")}
             </Text>
             <View style={styles.holdingList}>
               {slices.map((s, i) => {
@@ -310,19 +318,19 @@ export default function PortfolioScreen() {
                     {/* Detail grid */}
                     <View style={styles.holdingDetail}>
                       <View style={styles.detailCol}>
-                        <Text style={[styles.detailLabel, { color: c.textMuted }]}>Vào</Text>
+                        <Text style={[styles.detailLabel, { color: c.textMuted }]}>{t("portfolio.entryPrice")}</Text>
                         <Text style={[styles.detailValue, { color: c.textPrimary }]}>
                           {formatNum(s.avgPrice)}
                         </Text>
                       </View>
                       <View style={styles.detailCol}>
-                        <Text style={[styles.detailLabel, { color: c.textMuted }]}>Hiện tại</Text>
+                        <Text style={[styles.detailLabel, { color: c.textMuted }]}>{t("portfolio.currentPrice")}</Text>
                         <Text style={[styles.detailValue, { color: c.textPrimary }]}>
                           {formatNum(s.currentPrice)}
                         </Text>
                       </View>
                       <View style={styles.detailCol}>
-                        <Text style={[styles.detailLabel, { color: c.textMuted }]}>Lãi/lỗ</Text>
+                        <Text style={[styles.detailLabel, { color: c.textMuted }]}>{t("portfolio.pnl")}</Text>
                         <Text style={[styles.detailValue, { color: retColor, fontFamily: typography.familyMedium }]}>
                           {retText}
                         </Text>

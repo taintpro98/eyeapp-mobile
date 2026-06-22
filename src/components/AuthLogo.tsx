@@ -1,12 +1,15 @@
-import { View, Text, StyleSheet } from "react-native";
-import { Eye } from "lucide-react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { typography } from "@/theme/tokens";
 
 export function AuthLogo({ subtitle }: { subtitle: string }) {
   return (
     <View style={styles.container}>
-      <View style={styles.circle}>
-        <Eye size={32} color="#4B1F63" strokeWidth={1.8} />
+      <View style={styles.logoCircle}>
+        <Image
+          source={require("../../assets/icon.png")}
+          style={{ width: 100, height: 100 }}
+          resizeMode="cover"
+        />
       </View>
       <Text style={[styles.brand, { fontFamily: typography.familyBold }]}>
         ALumiEye
@@ -21,13 +24,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 32,
   },
-  circle: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: "#E8DDD0",
-    alignItems: "center",
-    justifyContent: "center",
+  logoCircle: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    overflow: "hidden",
     marginBottom: 16,
   },
   brand: {

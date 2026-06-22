@@ -4,6 +4,7 @@ import { ChevronRight, RefreshCw } from "lucide-react-native";
 import { useTranslation } from "react-i18next";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
+import { timeAgo } from "@/utils/timeAgo";
 import type { Position, PositionLive } from "@/api/positions";
 
 type Props = {
@@ -14,17 +15,6 @@ type Props = {
 
 function formatNumber(n: number): string {
   return n.toLocaleString("en-US", { maximumFractionDigits: 4 });
-}
-
-function formatTimestamp(ts: number, days: string[]): string {
-  const d = new Date(ts * 1000);
-  const now = new Date();
-  const diffDays = Math.floor((now.getTime() - d.getTime()) / 86400000);
-  const hhmm = d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
-  if (diffDays < 7) return `${days[d.getDay()]} ${hhmm}`;
-  const dd = String(d.getDate()).padStart(2, "0");
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  return `${dd}/${mm}/${d.getFullYear()} ${hhmm}`;
 }
 
 function getStatusStyle(status: string, c: ReturnType<typeof useThemeColors>) {
@@ -98,7 +88,6 @@ export function PositionCard({ position, onPress, onRefresh }: Props) {
 
   const isBuy = position.side === "buy";
   const borderColor = isBuy ? c.positive : c.negative;
-  const days: string[] = t("common.time.days", { returnObjects: true }) as string[];
 
   const sideBadge = {
     bg: isBuy ? c.buyBg : c.sellBg,
@@ -169,7 +158,7 @@ export function PositionCard({ position, onPress, onRefresh }: Props) {
         {/* Meta: timestamp · term badge */}
         <View style={styles.metaRow}>
           <Text style={[styles.metaText, { color: c.textMuted }]}>
-            {formatTimestamp(position.timestamp, days)}
+            {timeAgo(position.timestamp, t)}
           </Text>
           <Text style={[styles.metaDot, { color: c.divider }]}>·</Text>
           <View style={[styles.termBadge, { backgroundColor: termStyle.bg }]}>
@@ -182,7 +171,7 @@ export function PositionCard({ position, onPress, onRefresh }: Props) {
         {/* Static data */}
         <View style={styles.dataGrid}>
           <View>
-            <Text style={[styles.dataLabel, { color: c.textFaint }]}>AVG PRICE</Text>
+            <Text style={[styles.dataLabel, { color: c.textFaint }]}>{t("positions.columns.avgPrice").toUpperCase()}</Text>
             <Text style={[styles.dataValue, { color: c.textPrimary, fontFamily: typography.familyMedium }]}>
               {formatNumber(position.avg_price)}
             </Text>
@@ -194,7 +183,7 @@ export function PositionCard({ position, onPress, onRefresh }: Props) {
           </View>
 
           <View>
-            <Text style={[styles.dataLabel, { color: c.textFaint }]}>SIZE</Text>
+            <Text style={[styles.dataLabel, { color: c.textFaint }]}>{t("positions.columns.size").toUpperCase()}</Text>
             <Text style={[styles.dataValue, { color: c.textMuted }]}>
               {formatNumber(position.size)}
             </Text>
@@ -202,7 +191,7 @@ export function PositionCard({ position, onPress, onRefresh }: Props) {
 
           {/* Capacity bar — full width */}
           <View style={styles.capacityCol}>
-            <Text style={[styles.dataLabel, { color: c.textFaint }]}>CAPACITY</Text>
+            <Text style={[styles.dataLabel, { color: c.textFaint }]}>{t("positions.columns.capacity").toUpperCase()}</Text>
             <View style={styles.capacityRow}>
               <View style={[styles.capacityTrack, { backgroundColor: c.capacityTrackBg }]}>
                 <View style={[styles.capacityFill, { width: `${Math.min(position.capacity, 100)}%`, backgroundColor: borderColor }]} />
@@ -219,24 +208,24 @@ export function PositionCard({ position, onPress, onRefresh }: Props) {
           <View style={[styles.liveSection, { borderTopColor: c.cardBorder }]}>
             <View style={styles.dataGrid}>
               <LiveCell
-                label="CUR. PRICE"
+                label={t("positions.columns.curPrice").toUpperCase()}
                 value={curPrice != null ? formatNumber(curPrice) : "—"}
                 c={c}
               />
               <LiveCell
-                label="UNR. P&L"
+                label={t("positions.columns.unrealizedPnl").toUpperCase()}
                 value={fmtPct(unrPnl)}
                 valueColor={pnlColor(unrPnl)}
                 c={c}
               />
               <LiveCell
-                label="P&L"
+                label={t("positions.columns.pnl").toUpperCase()}
                 value={fmtPct(posReturn)}
                 valueColor={pnlColor(posReturn)}
                 c={c}
               />
               <LiveCell
-                label="DIST. TO SL"
+                label={t("positions.columns.distToSL").toUpperCase()}
                 value={distToSl != null ? `${Math.abs(distToSl).toFixed(2)}%` : "—"}
                 valueColor={distToSl != null ? c.textMuted : undefined}
                 c={c}

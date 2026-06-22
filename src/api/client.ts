@@ -1,4 +1,15 @@
-const API_BASE = `${process.env.EXPO_PUBLIC_API_URL ?? "http://localhost:8080"}/api/v1`;
+import { Platform } from "react-native";
+
+function resolveApiBase(): string {
+  if (process.env.EXPO_PUBLIC_API_URL) {
+    return `${process.env.EXPO_PUBLIC_API_URL}/api/v1`;
+  }
+  // Dev auto-detect: Android emulator routes to host via 10.0.2.2, iOS Simulator uses localhost
+  const host = Platform.OS === "android" ? "10.0.2.2" : "localhost";
+  return `http://${host}:8080/api/v1`;
+}
+
+const API_BASE = resolveApiBase();
 
 export type ApiError = {
   error: { code: string; message: string };

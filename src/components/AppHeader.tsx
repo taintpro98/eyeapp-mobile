@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import { Bell } from "lucide-react-native";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
@@ -12,7 +12,11 @@ export function AppHeader() {
   return (
     <View style={styles.bar}>
       <View style={styles.logoCircle}>
-        <Text style={styles.logoLetter}>A</Text>
+        <Image
+          source={require("../../assets/icon.png")}
+          style={{ width: 30, height: 30 }}
+          resizeMode="cover"
+        />
       </View>
       <Text
         style={[
@@ -45,14 +49,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 15,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#6F2C91",
-  },
-  logoLetter: {
-    color: "#fff",
-    fontSize: 14,
-    fontWeight: "700",
+    overflow: "hidden",
   },
   logoText: {
     fontSize: 16,

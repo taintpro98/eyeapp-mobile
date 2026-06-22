@@ -3,8 +3,14 @@
     "loading": "Đang tải...",
     "refresh": "Làm mới",
     "apply": "Áp dụng",
+    "find": "Tìm",
     "time": {
-      "days": ["CN", "T2", "T3", "T4", "T5", "T6", "T7"]
+      "days": ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+      "justNow": "Vừa xong",
+      "minutesAgo": "{{count}} phút trước",
+      "hoursAgo": "{{count}} giờ trước",
+      "yesterday": "Hôm qua {{time}}",
+      "thisWeek": "{{day}} {{time}}"
     }
   },
   "nav": {
@@ -49,38 +55,85 @@
     "manageBilling": "Quản lý thanh toán",
     "signOut": "Đăng xuất"
   },
+  "dashboard": {
+    "welcome": "Xin chào, {{name}}",
+    "subtitle": "Thị trường của bạn",
+    "recentSignals": "Tín hiệu gần đây",
+    "recentSignalsSubtitle": "Những tín hiệu mới nhất trên thị trường",
+    "confidence": {
+      "strong": "Mạnh",
+      "moderate": "Trung bình"
+    },
+    "viewAllSignals": "Xem tất cả tín hiệu",
+    "unlockPremium": "Mở khóa Premium",
+    "unlockPremiumDesc": "Phân tích nâng cao, thị trường crypto và insights AI.",
+    "noSignals": "Không có tín hiệu gần đây"
+  },
   "portfolio": {
     "title": "Danh mục",
     "subtitle": "Theo dõi danh mục và hiệu suất",
     "allocation": "Phân bổ",
     "totalValue": "Tổng giá trị",
     "cash": "Tiền mặt",
-    "positions": "Vị thế"
+    "positions": "Vị thế",
+    "details": "CHI TIẾT DANH MỤC",
+    "entryPrice": "Vào",
+    "currentPrice": "Hiện tại",
+    "pnl": "Lãi/lỗ",
+    "noData": "Không có dữ liệu danh mục"
   },
   "signals": {
     "title": "Tín hiệu giao dịch",
     "noSignals": "Không có tín hiệu nào.",
     "accessDenied": "Cần nâng cấp để xem tín hiệu",
-    "accessDeniedHint": "Gói hiện tại của bạn chưa bao gồm tính năng tín hiệu. Nâng cấp để truy cập."
+    "accessDeniedHint": "Gói hiện tại của bạn chưa bao gồm tính năng tín hiệu. Nâng cấp để truy cập.",
+    "symbol": "Tín hiệu — {{symbol}}",
+    "columns": {
+      "qty": "SL",
+      "price": "GIÁ",
+      "time": "TG"
+    }
   },
   "market": {
     "title": "Tổng quan thị trường",
     "stocks": "Cổ phiếu",
-    "crypto": "Crypto"
+    "crypto": "Crypto",
+    "subtitle": "Chứng khoán Việt Nam · HOSE",
+    "topMovers": "Biến động mạnh",
+    "topMoversSubtitle": "Các mã giao dịch nhiều nhất",
+    "sentiment": "Tâm lý thị trường",
+    "sentimentBullish": "Tăng giá",
+    "sentimentNeutral": "Trung tính",
+    "sentimentBearish": "Giảm giá"
   },
   "watchlist": {
     "title": "Danh sách theo dõi",
     "accessDenied": "Không có quyền truy cập",
-    "accessDeniedHint": "Gói hiện tại của bạn không bao gồm tính năng danh sách theo dõi cho thị trường này."
+    "accessDeniedHint": "Gói hiện tại của bạn không bao gồm tính năng danh sách theo dõi cho thị trường này.",
+    "empty": "Không có mục nào trong danh sách theo dõi"
   },
   "positions": {
     "title": "Vị thế",
     "noPositions": "Không có vị thế nào.",
     "accessDenied": "Cần nâng cấp để xem vị thế",
     "accessDeniedHint": "Gói hiện tại của bạn chưa bao gồm tính năng vị thế. Nâng cấp để truy cập.",
+    "filters": {
+      "all": "Tất cả",
+      "running": "Đang chạy",
+      "opened": "Đã mở",
+      "closing": "Đang đóng",
+      "closed": "Đã đóng",
+      "active": "Hoạt động"
+    },
     "columns": {
       "avgPrice": "Giá TB",
-      "capacity": "Tỷ trọng"
+      "stopLoss": "Cắt lỗ",
+      "capacity": "Tỷ trọng",
+      "size": "KL",
+      "curPrice": "Giá HT",
+      "unrealizedPnl": "L/L Chưa Chốt",
+      "pnl": "Lãi/Lỗ",
+      "distToSL": "Cách SL"
     },
     "detail": {
       "orders": "Lịch sử lệnh",
@@ -109,6 +162,14 @@
         "positionPnl": "P&L vị thế"
       }
     }
+  },
+  "analytics": {
+    "openPositions": "Vị thế đang mở — {{symbol}}",
+    "noOpenPositions": "Không có vị thế nào đang mở.",
+    "signal": "TÍN HIỆU",
+    "strength": "ĐỘ MẠNH",
+    "rating": "Xếp hạng",
+    "livePrice": "Giá hiện tại"
   },
   "positionsEnum": {
     "side": {
@@ -141,7 +202,22 @@
     "emptyState": "Tìm kiếm một tài sản để bắt đầu phân tích",
     "trendAnalysis": "Phân tích xu hướng",
     "shortTerm": "Ngắn hạn",
-    "midTerm": "Trung hạn"
+    "midTerm": "Trung hạn",
+    "trend": {
+      "uptrend": "Tăng",
+      "downtrend": "Giảm",
+      "sideways": "Đi ngang"
+    },
+    "signal": {
+      "bullish": "Tăng giá",
+      "bearish": "Giảm giá",
+      "neutral": "Trung tính"
+    },
+    "strength": {
+      "strong": "Mạnh",
+      "moderate": "Trung bình",
+      "weak": "Yếu"
+    }
   },
   "auth": {
     "signIn": "Đăng nhập",
