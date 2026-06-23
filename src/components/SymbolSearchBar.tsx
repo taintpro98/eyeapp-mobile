@@ -12,16 +12,17 @@ type Props = {
   style?: ViewStyle;
 };
 
-export function SymbolSearchBar({ value, onChangeText, onSubmit, placeholder = "Filter by symbol", style }: Props) {
+export function SymbolSearchBar({ value, onChangeText, onSubmit, placeholder, style }: Props) {
   const c = useThemeColors();
   const { t } = useTranslation();
+  const resolvedPlaceholder = placeholder ?? t("common.filterBySymbol");
 
   return (
     <View style={[styles.container, { backgroundColor: c.card, borderColor: c.cardBorder }, style]}>
       <Search size={17} color={c.textFaint} />
       <TextInput
         style={[styles.input, { color: c.textPrimary }]}
-        placeholder={placeholder}
+        placeholder={resolvedPlaceholder}
         placeholderTextColor={c.textFaint}
         value={value}
         onChangeText={onChangeText}

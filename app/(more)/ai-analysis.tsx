@@ -1,11 +1,13 @@
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useTranslation } from "react-i18next";
 import { ChevronLeft, Lock, Sparkles } from "lucide-react-native";
 import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 
 export default function AiAnalysisScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
   const router = useRouter();
 
@@ -21,7 +23,7 @@ export default function AiAnalysisScreen() {
             { color: c.textPrimary, fontFamily: typography.familyBold },
           ]}
         >
-          AI Analysis
+          {t("nav.aiInsights")}
         </Text>
       </View>
       <View style={styles.centered}>
@@ -35,13 +37,13 @@ export default function AiAnalysisScreen() {
             { color: c.textPrimary, fontFamily: typography.familySemiBold },
           ]}
         >
-          Premium Feature
+          {t("aiAnalysis.lockedTitle")}
         </Text>
         <Text style={[styles.lockedSub, { color: c.textMuted }]}>
-          AI-powered insights and forecasts require a Premium plan.
+          {t("aiAnalysis.lockedDesc")}
         </Text>
         <Pressable style={styles.upgradeButton}>
-          <Text style={styles.upgradeText}>Upgrade to Premium</Text>
+          <Text style={styles.upgradeText}>{t("aiAnalysis.upgradeBtn")}</Text>
         </Pressable>
       </View>
     </SafeAreaView>

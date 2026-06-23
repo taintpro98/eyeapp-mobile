@@ -4,6 +4,7 @@
     "refresh": "Refresh",
     "apply": "Apply",
     "find": "Find",
+    "filterBySymbol": "Filter by symbol",
     "time": {
       "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       "justNow": "Just now",
@@ -80,11 +81,14 @@
     "entryPrice": "Entry",
     "currentPrice": "Current",
     "pnl": "P&L",
-    "noData": "No portfolio data"
+    "noData": "No portfolio data",
+    "accessDenied": "Portfolio locked",
+    "accessDeniedHint": "Upgrade your plan to view portfolio for this market."
   },
   "signals": {
     "title": "Trading signals",
     "noSignals": "No signals found.",
+    "loadError": "Failed to load signals",
     "accessDenied": "Upgrade required to view signals",
     "accessDeniedHint": "Your current plan does not include signals. Upgrade to access.",
     "symbol": "Signals — {{symbol}}",
@@ -227,7 +231,48 @@
     "noAccount": "Don't have an account?",
     "haveAccount": "Already have an account?"
   },
+  "verifyEmail": {
+    "subtitle": "Verify Email",
+    "loadingTitle": "Verifying…",
+    "loadingDesc": "Please wait a moment.",
+    "successTitle": "Email verified!",
+    "successDesc": "Your account is ready. Sign in to continue.",
+    "signIn": "Sign in",
+    "failedTitle": "Verification failed",
+    "backToSignIn": "Back to sign in",
+    "createAccount": "Create new account",
+    "checkEmailTitle": "Check your email",
+    "checkEmailDesc": "We sent a verification link to your email. Click the link in the email to activate your account.",
+    "noEmailHint": "Didn't receive an email? Resend below.",
+    "emailPlaceholder": "Your email",
+    "sentMsg": "Email sent! Check your inbox.",
+    "sendError": "Failed to send. Please try again.",
+    "resendSent": "Sent",
+    "resendBtn": "Resend verification email",
+    "expiredError": "Verification link has expired. Please request a new one.",
+    "genericError": "Verification failed. Please try again."
+  },
+  "onboarding": {
+    "subtitle": "Choose a market to get started",
+    "title": "Choose your market",
+    "description": "Select a free market to get started. You can add more markets later from Billing.",
+    "error": "Something went wrong. Please try again.",
+    "free": "Free",
+    "startFree": "Start for free"
+  },
   "upgrade": {
     "upgradeNow": "Upgrade now"
+  },
+  "more": {
+    "watchlistSub": "Your saved tickers",
+    "portfolioSub": "Allocation & holdings",
+    "analyticsSub": "Performance & risk",
+    "aiSub": "Premium",
+    "helpSupport": "Help & support"
+  },
+  "aiAnalysis": {
+    "lockedTitle": "Premium Feature",
+    "lockedDesc": "AI-powered insights and forecasts require a Premium plan.",
+    "upgradeBtn": "Upgrade to Premium"
   }
 }

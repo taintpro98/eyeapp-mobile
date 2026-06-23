@@ -185,7 +185,7 @@ export default function SignalsScreen() {
             <View style={styles.centered}>
               {error ? (
                 <Text style={{ color: c.negative, textAlign: "center", paddingHorizontal: 20 }}>
-                  {(error as any).message ?? "Failed to load signals"}
+                  {(error as any).message ?? t("signals.loadError")}
                 </Text>
               ) : (
                 <Text style={{ color: c.textMuted }}>{t("signals.noSignals")}</Text>

@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useTranslation } from "react-i18next";
 import {
   Star,
   PieChart,
@@ -14,32 +15,33 @@ import { useThemeColors } from "@/theme/useTheme";
 import { typography } from "@/theme/tokens";
 
 export default function MoreScreen() {
+  const { t } = useTranslation();
   const c = useThemeColors();
   const router = useRouter();
 
   const tiles = [
     {
       icon: Star,
-      label: "Watchlist",
-      sub: "12 tickers tracked",
+      label: t("nav.watchlist"),
+      sub: t("more.watchlistSub"),
       onPress: () => router.push("/(more)/watchlist"),
     },
     {
       icon: PieChart,
-      label: "Portfolio",
-      sub: "Allocation & holdings",
+      label: t("nav.portfolio"),
+      sub: t("more.portfolioSub"),
       onPress: () => router.push("/(more)/portfolio"),
     },
     {
       icon: BarChart3,
-      label: "Analytics",
-      sub: "Performance & risk",
+      label: t("nav.analysis"),
+      sub: t("more.analyticsSub"),
       onPress: () => router.push("/(more)/analytics"),
     },
     {
       icon: Sparkles,
-      label: "AI Analysis",
-      sub: "Premium",
+      label: t("nav.aiInsights"),
+      sub: t("more.aiSub"),
       premium: true,
       onPress: () => router.push("/(more)/ai-analysis"),
     },
@@ -54,7 +56,7 @@ export default function MoreScreen() {
             { color: c.textPrimary, fontFamily: typography.familyBold },
           ]}
         >
-          More
+          {t("nav.more")}
         </Text>
 
         {/* 2x2 tile grid */}
@@ -114,7 +116,7 @@ export default function MoreScreen() {
               { color: c.textPrimary, fontFamily: typography.familyMedium },
             ]}
           >
-            Settings
+            {t("settings.title")}
           </Text>
         </Pressable>
         <Pressable style={styles.menuRow}>
@@ -125,7 +127,7 @@ export default function MoreScreen() {
               { color: c.textPrimary, fontFamily: typography.familyMedium },
             ]}
           >
-            Help & support
+            {t("more.helpSupport")}
           </Text>
         </Pressable>
       </ScrollView>

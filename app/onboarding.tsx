@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useTranslation } from "react-i18next";
 import { Check } from "lucide-react-native";
 import { useAuthStore } from "@/store/authStore";
 import { fetchOnboardingMarkets, fetchUserMarkets, subscribeFreeMarket } from "@/api/markets";
@@ -28,6 +29,7 @@ function formatFeature(code: string): string {
 }
 
 export default function OnboardingScreen() {
+  const { t } = useTranslation();
   const router = useRouter();
   const accessToken = useAuthStore((s) => s.accessToken);
 
@@ -54,7 +56,6 @@ export default function OnboardingScreen() {
         }
         setMarkets(allMarkets);
       } catch {
-        // If the markets check fails, let user into tabs anyway
         router.replace("/(tabs)");
       } finally {
         setChecking(false);
@@ -73,7 +74,7 @@ export default function OnboardingScreen() {
       await subscribeFreeMarket(market.market_id, accessToken);
       router.replace("/(tabs)");
     } catch {
-      setError("Đã xảy ra lỗi. Vui lòng thử lại.");
+      setError(t("onboarding.error"));
       setSubscribing(null);
     }
   }
@@ -90,14 +91,11 @@ export default function OnboardingScreen() {
     <View style={styles.bg}>
       <SafeAreaView style={styles.flex}>
         <ScrollView contentContainerStyle={styles.scroll}>
-          <AuthLogo subtitle="Chọn thị trường để bắt đầu" />
+          <AuthLogo subtitle={t("onboarding.subtitle")} />
 
           <View style={styles.headerBlock}>
-            <Text style={styles.title}>Chọn thị trường của bạn</Text>
-            <Text style={styles.subtitle}>
-              Chọn một thị trường miễn phí để bắt đầu. Bạn có thể thêm thị
-              trường khác sau từ Billing.
-            </Text>
+            <Text style={styles.title}>{t("onboarding.title")}</Text>
+            <Text style={styles.subtitle}>{t("onboarding.description")}</Text>
           </View>
 
           {error ? (
@@ -114,6 +112,7 @@ export default function OnboardingScreen() {
                 onSelect={() => handleSelect(market)}
                 loading={subscribing === market.market_id}
                 disabled={subscribing !== null}
+                t={t}
               />
             ))}
           </View>
@@ -128,11 +127,13 @@ function MarketCard({
   onSelect,
   loading,
   disabled,
+  t,
 }: {
   market: Market;
   onSelect: () => void;
   loading: boolean;
   disabled: boolean;
+  t: (key: string) => string;
 }) {
   const freePlan = market.plans.find((p) => p.code === "free");
   if (!freePlan) return null;
@@ -142,7 +143,7 @@ function MarketCard({
       <View style={styles.cardHeader}>
         <Text style={styles.cardName}>{market.name}</Text>
         <View style={styles.freeBadge}>
-          <Text style={styles.freeBadgeText}>Free</Text>
+          <Text style={styles.freeBadgeText}>{t("onboarding.free")}</Text>
         </View>
       </View>
 
@@ -163,7 +164,7 @@ function MarketCard({
         {loading ? (
           <ActivityIndicator color="#fff" />
         ) : (
-          <Text style={styles.buttonText}>Bắt đầu miễn phí</Text>
+          <Text style={styles.buttonText}>{t("onboarding.startFree")}</Text>
         )}
       </Pressable>
     </View>

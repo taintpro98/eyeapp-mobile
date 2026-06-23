@@ -95,7 +95,7 @@ export default function PositionsScreen() {
             { color: c.textPrimary, fontFamily: typography.familyBold },
           ]}
         >
-          Positions
+          {t("positions.title")}
         </Text>
         <View style={{ flex: 1 }} />
       </View>
@@ -156,8 +156,8 @@ export default function PositionsScreen() {
       {/* List */}
       {isAccessDenied(error) ? (
         <AccessDeniedState
-          title="Positions bị khóa"
-          hint="Nâng cấp gói của bạn để xem danh sách vị thế trên thị trường này."
+          title={t("positions.accessDenied")}
+          hint={t("positions.accessDeniedHint")}
         />
       ) : isLoading ? (
         <View style={styles.centered}>
@@ -198,7 +198,7 @@ export default function PositionsScreen() {
           ItemSeparatorComponent={() => <View style={{ height: 11 }} />}
           ListEmptyComponent={
             <View style={styles.centered}>
-              <Text style={{ color: c.textMuted }}>No positions found</Text>
+              <Text style={{ color: c.textMuted }}>{t("positions.noPositions")}</Text>
             </View>
           }
         />

@@ -12,6 +12,7 @@ import {
 } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useTranslation } from "react-i18next";
 import { CheckCircle2, XCircle, Mail } from "lucide-react-native";
 import { verifyEmail, resendVerificationEmail } from "@/api/auth";
 import { AuthLogo } from "@/components/AuthLogo";
@@ -28,6 +29,7 @@ type VerifyStatus = "idle" | "loading" | "success" | "error";
 type ResendStatus = "idle" | "loading" | "sent" | "error";
 
 export default function VerifyEmailScreen() {
+  const { t } = useTranslation();
   const router = useRouter();
   const { token, email: emailParam } = useLocalSearchParams<{
     token?: string;
@@ -60,9 +62,9 @@ export default function VerifyEmailScreen() {
         if (!mountedRef.current) return;
         setVerifyStatus("error");
         if (err.code === "verification_token_expired") {
-          setVerifyError("Link xác minh đã hết hạn. Vui lòng yêu cầu gửi lại.");
+          setVerifyError(t("verifyEmail.expiredError"));
         } else {
-          setVerifyError(err.message || "Xác minh thất bại. Vui lòng thử lại.");
+          setVerifyError(err.message || t("verifyEmail.genericError"));
         }
       });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -90,41 +92,36 @@ export default function VerifyEmailScreen() {
             contentContainerStyle={styles.scroll}
             keyboardShouldPersistTaps="handled"
           >
-            <AuthLogo subtitle="Xác minh email" />
+            <AuthLogo subtitle={t("verifyEmail.subtitle")} />
 
             <View style={styles.card}>
-              {/* Loading — verifying token */}
               {verifyStatus === "loading" && (
                 <>
                   <ActivityIndicator color={BRAND} size="large" style={styles.icon} />
-                  <Text style={styles.cardTitle}>Đang xác minh…</Text>
-                  <Text style={styles.cardSub}>Vui lòng chờ trong giây lát.</Text>
+                  <Text style={styles.cardTitle}>{t("verifyEmail.loadingTitle")}</Text>
+                  <Text style={styles.cardSub}>{t("verifyEmail.loadingDesc")}</Text>
                 </>
               )}
 
-              {/* Success */}
               {verifyStatus === "success" && (
                 <>
                   <CheckCircle2 size={52} color="#22c55e" style={styles.icon} />
-                  <Text style={styles.cardTitle}>Email đã được xác minh!</Text>
-                  <Text style={styles.cardSub}>
-                    Tài khoản của bạn đã sẵn sàng. Hãy đăng nhập để tiếp tục.
-                  </Text>
+                  <Text style={styles.cardTitle}>{t("verifyEmail.successTitle")}</Text>
+                  <Text style={styles.cardSub}>{t("verifyEmail.successDesc")}</Text>
                   <Pressable
                     style={[styles.button, { marginTop: 20 }]}
                     onPress={() => router.replace("/(auth)/sign-in")}
                   >
-                    <Text style={styles.buttonText}>Đăng nhập</Text>
+                    <Text style={styles.buttonText}>{t("verifyEmail.signIn")}</Text>
                   </Pressable>
                 </>
               )}
 
-              {/* Error — token invalid/expired */}
               {verifyStatus === "error" && (
                 <>
                   <XCircle size={52} color="#ef4444" style={styles.icon} />
                   <Text style={[styles.cardTitle, { color: "#ef4444" }]}>
-                    Xác minh thất bại
+                    {t("verifyEmail.failedTitle")}
                   </Text>
                   <Text style={styles.cardSub}>{verifyError}</Text>
                   <ResendForm
@@ -132,42 +129,40 @@ export default function VerifyEmailScreen() {
                     onEmailChange={setResendEmail}
                     status={resendStatus}
                     onResend={handleResend}
+                    t={t}
                   />
                   <View style={styles.linkRow}>
                     <Pressable onPress={() => router.replace("/(auth)/sign-in")}>
-                      <Text style={styles.link}>Về đăng nhập</Text>
+                      <Text style={styles.link}>{t("verifyEmail.backToSignIn")}</Text>
                     </Pressable>
                     <Text style={[styles.cardSub, { marginHorizontal: 8 }]}>·</Text>
                     <Pressable onPress={() => router.replace("/(auth)/sign-up")}>
-                      <Text style={styles.link}>Tạo tài khoản mới</Text>
+                      <Text style={styles.link}>{t("verifyEmail.createAccount")}</Text>
                     </Pressable>
                   </View>
                 </>
               )}
 
-              {/* Idle — no token, post sign-up state */}
               {verifyStatus === "idle" && (
                 <>
                   <Mail size={52} color={BRAND} style={styles.icon} />
-                  <Text style={styles.cardTitle}>Kiểm tra email của bạn</Text>
-                  <Text style={styles.cardSub}>
-                    Chúng tôi đã gửi link xác minh đến email của bạn. Nhấp vào
-                    link trong email để kích hoạt tài khoản.
-                  </Text>
+                  <Text style={styles.cardTitle}>{t("verifyEmail.checkEmailTitle")}</Text>
+                  <Text style={styles.cardSub}>{t("verifyEmail.checkEmailDesc")}</Text>
                   <Text style={[styles.cardSub, { marginTop: 20 }]}>
-                    Không nhận được email? Gửi lại bên dưới.
+                    {t("verifyEmail.noEmailHint")}
                   </Text>
                   <ResendForm
                     email={resendEmail}
                     onEmailChange={setResendEmail}
                     status={resendStatus}
                     onResend={handleResend}
+                    t={t}
                   />
                   <Pressable
                     style={styles.outlineButton}
                     onPress={() => router.replace("/(auth)/sign-in")}
                   >
-                    <Text style={styles.outlineButtonText}>Về đăng nhập</Text>
+                    <Text style={styles.outlineButtonText}>{t("verifyEmail.backToSignIn")}</Text>
                   </Pressable>
                 </>
               )}
@@ -184,18 +179,20 @@ function ResendForm({
   onEmailChange,
   status,
   onResend,
+  t,
 }: {
   email: string;
   onEmailChange: (v: string) => void;
   status: ResendStatus;
   onResend: () => void;
+  t: (key: string) => string;
 }) {
   const disabled = status === "loading" || status === "sent";
   return (
     <View style={{ width: "100%", marginTop: 16, gap: 10 }}>
       <TextInput
         style={[styles.input, disabled && { opacity: 0.6 }]}
-        placeholder="Email của bạn"
+        placeholder={t("verifyEmail.emailPlaceholder")}
         placeholderTextColor={FAINT}
         value={email}
         onChangeText={onEmailChange}
@@ -206,12 +203,12 @@ function ResendForm({
       />
       {status === "sent" && (
         <Text style={{ color: "#22c55e", fontSize: 13, textAlign: "center" }}>
-          Email đã được gửi! Kiểm tra hộp thư của bạn.
+          {t("verifyEmail.sentMsg")}
         </Text>
       )}
       {status === "error" && (
         <Text style={{ color: "#ef4444", fontSize: 13, textAlign: "center" }}>
-          Gửi thất bại. Vui lòng thử lại.
+          {t("verifyEmail.sendError")}
         </Text>
       )}
       <Pressable
@@ -223,7 +220,7 @@ function ResendForm({
           <ActivityIndicator color="#fff" />
         ) : (
           <Text style={styles.buttonText}>
-            {status === "sent" ? "Đã gửi" : "Gửi lại email xác minh"}
+            {status === "sent" ? t("verifyEmail.resendSent") : t("verifyEmail.resendBtn")}
           </Text>
         )}
       </Pressable>

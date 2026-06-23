@@ -17,6 +17,7 @@ export default function SettingsScreen() {
   const c = useThemeColors();
   const router = useRouter();
   const { preference, setPreference } = useThemeStore();
+  const user = useAuthStore((s) => s.user);
   const clearAuth = useAuthStore((s) => s.clearAuth);
   const refreshToken = useAuthStore((s) => s.refreshToken);
   const [currentLang, setCurrentLang] = useState(i18n.language as "en" | "vi");
@@ -99,9 +100,9 @@ export default function SettingsScreen() {
         {/* Profile */}
         <SectionHeader title={t("settings.profile")} subtitle={t("settings.profileSubtitle")} c={c} />
         <View style={[styles.card, { backgroundColor: c.card, borderColor: c.cardBorder }]}>
-          <ProfileRow label={t("settings.displayName")} value="—" c={c} />
+          <ProfileRow label={t("settings.displayName")} value={user?.display_name ?? "—"} c={c} />
           <View style={[styles.rowDivider, { backgroundColor: c.divider }]} />
-          <ProfileRow label={t("settings.email")} value="—" c={c} />
+          <ProfileRow label={t("settings.email")} value={user?.email ?? "—"} c={c} />
         </View>
 
         {/* Sign out */}

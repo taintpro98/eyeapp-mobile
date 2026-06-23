@@ -4,6 +4,7 @@
     "refresh": "Làm mới",
     "apply": "Áp dụng",
     "find": "Tìm",
+    "filterBySymbol": "Lọc theo mã",
     "time": {
       "days": ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
       "justNow": "Vừa xong",
@@ -80,11 +81,14 @@
     "entryPrice": "Vào",
     "currentPrice": "Hiện tại",
     "pnl": "Lãi/lỗ",
-    "noData": "Không có dữ liệu danh mục"
+    "noData": "Không có dữ liệu danh mục",
+    "accessDenied": "Danh mục bị khóa",
+    "accessDeniedHint": "Nâng cấp gói của bạn để xem danh mục đầu tư trên thị trường này."
   },
   "signals": {
     "title": "Tín hiệu giao dịch",
     "noSignals": "Không có tín hiệu nào.",
+    "loadError": "Không thể tải tín hiệu",
     "accessDenied": "Cần nâng cấp để xem tín hiệu",
     "accessDeniedHint": "Gói hiện tại của bạn chưa bao gồm tính năng tín hiệu. Nâng cấp để truy cập.",
     "symbol": "Tín hiệu — {{symbol}}",
@@ -227,7 +231,48 @@
     "noAccount": "Chưa có tài khoản?",
     "haveAccount": "Đã có tài khoản?"
   },
+  "verifyEmail": {
+    "subtitle": "Xác minh email",
+    "loadingTitle": "Đang xác minh…",
+    "loadingDesc": "Vui lòng chờ trong giây lát.",
+    "successTitle": "Email đã được xác minh!",
+    "successDesc": "Tài khoản của bạn đã sẵn sàng. Hãy đăng nhập để tiếp tục.",
+    "signIn": "Đăng nhập",
+    "failedTitle": "Xác minh thất bại",
+    "backToSignIn": "Về đăng nhập",
+    "createAccount": "Tạo tài khoản mới",
+    "checkEmailTitle": "Kiểm tra email của bạn",
+    "checkEmailDesc": "Chúng tôi đã gửi link xác minh đến email của bạn. Nhấp vào link trong email để kích hoạt tài khoản.",
+    "noEmailHint": "Không nhận được email? Gửi lại bên dưới.",
+    "emailPlaceholder": "Email của bạn",
+    "sentMsg": "Email đã được gửi! Kiểm tra hộp thư của bạn.",
+    "sendError": "Gửi thất bại. Vui lòng thử lại.",
+    "resendSent": "Đã gửi",
+    "resendBtn": "Gửi lại email xác minh",
+    "expiredError": "Link xác minh đã hết hạn. Vui lòng yêu cầu gửi lại.",
+    "genericError": "Xác minh thất bại. Vui lòng thử lại."
+  },
+  "onboarding": {
+    "subtitle": "Chọn thị trường để bắt đầu",
+    "title": "Chọn thị trường của bạn",
+    "description": "Chọn một thị trường miễn phí để bắt đầu. Bạn có thể thêm thị trường khác sau từ Billing.",
+    "error": "Đã xảy ra lỗi. Vui lòng thử lại.",
+    "free": "Free",
+    "startFree": "Bắt đầu miễn phí"
+  },
   "upgrade": {
     "upgradeNow": "Nâng cấp ngay"
+  },
+  "more": {
+    "watchlistSub": "Các mã đang theo dõi",
+    "portfolioSub": "Phân bổ & danh mục",
+    "analyticsSub": "Hiệu suất & rủi ro",
+    "aiSub": "Premium",
+    "helpSupport": "Trợ giúp & hỗ trợ"
+  },
+  "aiAnalysis": {
+    "lockedTitle": "Tính năng Premium",
+    "lockedDesc": "Phân tích và dự báo AI yêu cầu gói Premium.",
+    "upgradeBtn": "Nâng cấp lên Premium"
   }
 }

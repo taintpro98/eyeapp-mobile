@@ -200,8 +200,8 @@ export default function PortfolioScreen() {
 
       {isAccessDenied(error) ? (
         <AccessDeniedState
-          title="Portfolio bị khóa"
-          hint="Nâng cấp gói của bạn để xem danh mục đầu tư trên thị trường này."
+          title={t("portfolio.accessDenied")}
+          hint={t("portfolio.accessDeniedHint")}
         />
       ) : isLoading ? (
         <View style={styles.centered}>
